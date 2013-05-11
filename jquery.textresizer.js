@@ -1,13 +1,14 @@
 ﻿/*
 	jQuery Text Resizer plugin.
 	
-	Author: Mario J Vargas (angstrey at hotmail dot com)
+	Copyright (c) 2009 Mario J Vargas
+	See the file MIT-LICENSE.txt for copying permission.
+	
 	Website: http://angstrey.com/
 	Documentation: http://angstrey.com/index.php/projects/jquery-text-resizer-plugin/
 	
-	Version: 1.0
-	Revision History:
-		* 2009-09-03: Version 1.0. Initial Release
+	Version: 1.0.0
+	2009-09-03: Version 1.0.0. Initial Release
 */
 (function($) {
 	var DEBUG_MODE = false;
