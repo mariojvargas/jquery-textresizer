@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+	<script src="jquery.js" type="text/javascript"></script>
+	<script src="jquery.cookie.js" type="text/javascript"></script>
+	<script src="jquery.textresizer.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            jQuery("ul.textresizer a").textresizer({
+				target: "#content" 
+			});
+        });
+    </script>
+</head>
+<body>
+
+<div class="textresizer">
+   <p>Text Size:<p>
+   <ul class="textresizer">
+       <li><a href="#nogo">Small</a></li>
+       <li><a href="#nogo">Medium</a></li>
+       <li><a href="#nogo">Large</a></li>
+       <li><a href="#nogo">Larger</a></li>
+   </ul>
+</div>
+
+<div id="content">	
+    <h1>Lorem ipsum dolor sit amet</h1>
+    <p>
+        Lorem ipsum dolor sit amet, <b>consectetur adipiscing elit</b>. 
+        <i>Sed laoreet massa est</i>, eu vulputate urna. Class aptent 
+        taciti sociosqu ad litora torquent per conubia nostra, per 
+        inceptos himenaeos. Vestibulum magna mauris, molestie vitae 
+        sollicitudin id, auctor at orci. Nulla sodales lectus ac est 
+        fringilla sed vulputate risus lobortis. Quisque interdum 
+        dignissim molestie. Donec non sapien quis diam varius 
+        vestibulum. Vestibulum ante ipsum primis in faucibus orci 
+        luctus et ultrices posuere cubilia Curae; Ut pellentesque 
+        viverra varius. Aliquam vitae sem ut nibh ultricies consequat 
+        vel non felis. Etiam felis massa, pretium convallis posuere at, 
+        accumsan sit amet massa.
+    </p>
+    <p>
+        Suspendisse id purus metus, ac 
+        consequat nibh. Ut volutpat ultricies lorem quis interdum. 
+        Vestibulum ante ipsum primis in faucibus orci luctus et 
+        ultrices posuere cubilia Curae; Vestibulum ante ipsum primis in 
+        faucibus orci luctus et ultrices posuere cubilia Curae; 
+        Maecenas accumsan malesuada erat, in auctor erat sagittis ac. 
+        Maecenas augue turpis, viverra at congue ut, tristique vitae 
+        erat. Morbi nec tellus a sapien mollis cursus ut eu ipsum. 
+        Quisque eu vehicula magna.
+    </p>
+
+</div>
+
+
+</body>
+</html>
