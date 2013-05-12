@@ -1,8 +1,9 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-    <title>Font Sizes</title>
+    <meta charset="utf-8" />
+    <title>CSS Class Names</title>
 
     <link href="css/reset.css" rel="stylesheet" type="text/css" />
     <link href="css/text.css" rel="stylesheet" type="text/css" />
@@ -21,11 +22,11 @@
 			margin-bottom: 20px;
 		}
 		
-		#textsizer
+		#textsizer-classnames
 		{
 			margin-bottom: 6px;
 		}
-			#textsizer p
+			#textsizer-classnames p
 			{
 				display: inline;
 			}
@@ -90,17 +91,36 @@
 		{
 			background: #ffffcc;
 		}
+			#maincontent.small-text
+			{
+				font-size: 11px;
+			}
+			
+			#maincontent.medium-text
+			{
+				font-size: 13px;
+			}
+			
+			#maincontent.large-text
+			{
+				font-size: 15px;
+			}
+			
+			#maincontent.larger-text
+			{
+				font-size: 17px;
+			}
     </style>
 	    
-	<script src="jquery.js" type="text/javascript"></script>
-	<script src="jquery.cookie.js" type="text/javascript"></script>
-	<script src="jquery.textresizer.js" type="text/javascript"></script>    
-    <script type="text/javascript">
+    <script src="js/vendor/jquery/jquery-1.9.1.min.js"></script>
+    <script src="js/vendor/jquery/jquery.cookie/jquery.cookie.js"></script>
+	<script src="../jquery.textresizer.js"></script>    
+    <script>
 		jQuery(document).ready( function() {
-			jQuery( "#textsizer a" ).textresizer({
+			jQuery( "#textsizer-classnames a" ).textresizer({
 				target: "#maincontent",
-				type: "fontSize",
-				sizes: [ "11px", "13px", "15px", "17px" ],
+				type: "cssClass",
+				sizes: [ "small-text", "medium-text", "large-text", "larger-text" ],
 				selectedIndex: 1
 			});
 		});
@@ -124,20 +144,20 @@
 <body>
 
 	<div class="container_12">
-		<h1>Demo Using the "fontSize" Type</h1>
+		<h1>Demo Using the "cssClass" Type</h1>
 		<p>
 			<a href="http://angstrey.com/index.php/projects/jquery-text-resizer-plugin/">Return to Documentation</a>
 		</p>
 		<!-- Live Example -->
 		<div class="grid_12">
 			<h3>Live Example</h3>
-			<div id="textsizer">
+			<div id="textsizer-classnames">
 			   <p>Font Size:</p>
 			   <ul class="textresizer">
-				   <li><a href="#nogo" class="small-text">Small</a></li>
-				   <li><a href="#nogo" class="medium-text">Medium</a></li>
-				   <li><a href="#nogo" class="large-text">Large</a></li>
-				   <li><a href="#nogo" class="larger-text">X-Large</a></li>
+				   <li><a href="#nogo" class="small-text" title="Small">A</a></li>
+				   <li><a href="#nogo" class="medium-text" title="Medium">A</a></li>
+				   <li><a href="#nogo" class="large-text" title="Large">A</a></li>
+				   <li><a href="#nogo" class="larger-text" title="Larger">A</a></li>
 			   </ul>
 			</div>
 
@@ -178,83 +198,95 @@
 		<div class="grid_4">
 			
 			<h3>CSS</h3>
-			<p>
-				Note that in this example I am defining the look and feel 
-				of the resize buttons via CSS, even though in the JavaScript 
-				I am using the <strong>"fontSize"</strong> <strong>type</strong>
-				and then redefining the size of the targetted content via the 
-				<strong>sizes</strong> property.
-			</p>
 			<pre id="css-code" class="brush:css">
-#textsizer
+#textsizer-classnames
 {
-	margin-bottom: 6px;
+   margin-bottom: 6px;
 }
-	#textsizer p
-	{
-		display: inline;
-	}
+   #textsizer-classnames p
+   {
+      display: inline;
+   }
 ul.textresizer
 {
-	list-style: none;
-	display: inline;
-	margin: 0px;
-	padding: 0px;
+   list-style: none;
+   display: inline;
+   margin: 0px;
+   padding: 0px;
 }
-	ul.textresizer li
-	{
-		display: inline;
-		margin: 0px;
-		margin-right: 5px;
-		padding: 0px;
-	}
+   ul.textresizer li
+   {
+      display: inline;
+      margin: 0px;
+      margin-right: 5px;
+      padding: 0px;
+   }
 
-	ul.textresizer a
-	{
-		border: solid 1px #999;
-		padding: 2px 3px;
-		font-weight: bold;
-		text-decoration: none;
-	}
+   ul.textresizer a
+   {
+      border: solid 1px #999;
+      padding: 2px 3px;
+      font-weight: bold;
+      text-decoration: none;
+   }
     
-	ul.textresizer a:hover
-	{
-		background: #e5e5e5;
-		border: solid 1px #cccccc;
+   ul.textresizer a:hover
+   {
+      background: #e5e5e5;
+      border: solid 1px #cccccc;
         
-	}
+   }
 
-	ul.textresizer .small-text
-	{
-		font-size: 11px;
-	}
-	
-	ul.textresizer .medium-text
-	{
-		font-size: 13px;
-	}
-	
-	ul.textresizer .large-text
-	{
-		font-size: 15px;
-	}
-	
-	ul.textresizer .larger-text
-	{
-		font-size: 17px;
-	}
+   ul.textresizer .small-text
+   {
+      font-size: 11px;
+   }
+   
+   ul.textresizer .medium-text
+   {
+      font-size: 13px;
+   }
+   
+   ul.textresizer .large-text
+   {
+      font-size: 15px;
+   }
+   
+   ul.textresizer .larger-text
+   {
+      font-size: 17px;
+   }
 
-	ul.textresizer a.textresizer-active
-	{
-		border: solid 1px #2B562B;
-		background: #FFCA6F;
-		color: #000000;				
-	}
+   ul.textresizer a.textresizer-active
+   {
+      border: solid 1px #2B562B;
+      background: #FFCA6F;
+      color: #000000;            
+   }
 
 #maincontent 
 {
-	background: #ffffcc;
+   background: #ffffcc;
 }
+   #maincontent.small-text
+   {
+      font-size: 11px;
+   }
+   
+   #maincontent.medium-text
+   {
+      font-size: 13px;
+   }
+   
+   #maincontent.large-text
+   {
+      font-size: 15px;
+   }
+   
+   #maincontent.larger-text
+   {
+      font-size: 17px;
+   }
 			</pre>
 		</div>
 		
@@ -266,10 +298,15 @@ ul.textresizer
 &lt;script src=&quot;jquery.textresizer.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;    
 &lt;script type=&quot;text/javascript&quot;&gt;
    jQuery(document).ready( function() {
-      jQuery( &quot;#textsizer a&quot; ).textresizer({
+      jQuery( &quot;#textsizer-classnames a&quot; ).textresizer({
          target: &quot;#maincontent&quot;,
-         type: &quot;fontSize&quot;,
-         sizes: [ &quot;11px&quot;, &quot;13px&quot;, &quot;15px&quot;, &quot;17px&quot; ],
+         type: &quot;cssClass&quot;,
+         sizes: [ 
+            &quot;small-text&quot;, 
+            &quot;medium-text&quot;, 
+            &quot;large-text&quot;, 
+            &quot;larger-text&quot; 
+         ],
          selectedIndex: 1
       });
    });
@@ -280,7 +317,7 @@ ul.textresizer
 		<div class="grid_4">
 			<h3>HTML</h3>
 			<pre id="html-code" class="brush:html">
-&lt;div id=&quot;textsizer&quot;&gt;
+&lt;div id=&quot;textsizer-classnames&quot;&gt;
    &lt;p&gt;Font Size:&lt;/p&gt;
    &lt;ul class=&quot;textresizer&quot;&gt;
       &lt;li&gt;&lt;a href=&quot;#nogo&quot; class=&quot;small-text&quot; title=&quot;Small&quot;&gt;A&lt;/a&gt;&lt;/li&gt;
