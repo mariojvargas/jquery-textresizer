@@ -4,18 +4,22 @@
 <head>
     <meta charset="utf-8" />
     <title>Demo 1 - jQuery Text Resizer</title>
+    <link href="css/normalize.css" rel="stylesheet" />
+    <link href="css/demo.css" rel="stylesheet" />
 </head>
 <body>
-
-    <div class="textresizer">
-       <p>Text Size:<p>
+    <header>
+        <h1>Simple Demo</h1>
+    </header>
+    <nav>
+       <h2>Text Size:</h2>
        <ul id="text-resizer-controls" class="textresizer">
            <li><a href="#nogo">Small</a></li>
            <li><a href="#nogo">Medium</a></li>
            <li><a href="#nogo">Large</a></li>
            <li><a href="#nogo">Larger</a></li>
        </ul>
-    </div>
+    </nav>
 
     <div id="content">	
         <h1>Lorem ipsum dolor sit amet</h1>
@@ -48,9 +52,9 @@
     </div>
 
 
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script src="../lib/jquery/jquery.cookie/jquery.cookie.js"></script>
-    <script src="../jquery.textresizer.js"></script>
+    <script src="js/vendor/jquery/jquery-1.9.1.min.js"></script>
+    <script src="js/vendor/jquery/jquery.cookie/jquery.cookie.js"></script>
+	<script src="../jquery.textresizer.js"></script>    
     <script>
         jQuery(document).ready(function() {
             jQuery("#text-resizer-controls li a").textresizer({
