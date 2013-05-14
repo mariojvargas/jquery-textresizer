@@ -3,7 +3,7 @@
   "title": "jQuery Text Resizer",
   "description": "The jQuery Text Resizer plugin attempts to solve one problem: that of resizing text on demand by the user. It is flexible in that it lets you specify how to resize text, where it should be resized, and how the resizing controls are to be structured. Visit the project site for detailed information.",
   "keywords": ["text", "font", "resize", "resizer", "size", "sizer"],
-  "version": "1.0.0",
+  "version": "1.1.0-alpha",
   "author": {
     "name": "Mario J Vargas",
     "url": "http://www.angstrey.com"
