@@ -306,11 +306,4 @@
             });
         });
     };
-
-    // Default options of textresizer plugin
-    $.fn.textresizer.defaults = {
-        type: "fontSize",	         // Available options: fontSize, css, cssClass
-        target: "body",		         // The HTML element to which the new font size will be applied
-        suppressClickThrough: false  // Disables click-through of font size controls
-    };
 })(window.jQuery);
