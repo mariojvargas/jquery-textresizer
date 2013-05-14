@@ -7,7 +7,7 @@ For documentation, please visit the official [jQuery Text Resizer Plugin project
 
 ##Dependecies
 * [jQuery 1.3.2 or later] (http://jquery.com/)
-* [jQuery Cookie 1.0] (http://plugins.jquery.com/cookie/)
+* [jQuery Cookie 1.0 or later] (http://plugins.jquery.com/cookie/)
 
 ##Important Note
 This plugin distributes the above dependencies due to the demos included with the plugin. You do not have to use the included dependencies. In fact, I strongly discourage you.
