@@ -12,13 +12,21 @@
 
     var DEBUG_MODE = true;
 
-    function debug($obj) {
-        if (window.console && window.console.log) {
-            if ("string" === (typeof $obj)) {
-                window.console.log("jquery.textresizer => " + $obj);
+    function debug(obj) {
+        if (window.console && "function" === (typeof window.console.log)) {
+            var writeToLog = window.console.log,
+                key;
+
+            if ("string" === (typeof obj)) {
+                writeToLog("jquery.textresizer => " + obj);
             } else {
-                // Assumes $obj is jQuery object
-                window.console.log("jquery.textresizer => selection count: " + $obj.size());
+                writeToLog("jquery.textresizer => {");
+                for (key in obj) {
+                    if (obj.hasOwnProperty(key)) {
+                        writeToLog("    " + key + ": " + obj[key]);
+                    }
+                }
+                writeToLog("}");
             }
         }
     }
@@ -225,25 +233,35 @@
     }
 
     $.fn.textresizer = function (options) {
+        var numberOfElements = this.size(),
+            defaultSizes,
+            baseSettings,
+            settings;
+
         if (DEBUG_MODE) {
-            debug(this);
+            debug("jquery.textresizer => selection count: " + numberOfElements);
         }
 
         // Stop plugin execution if no matched elements
-        if (0 === this.size()) {
+        if (0 === numberOfElements) {
             return;
         }
 
         // Default font sizes based on number of resize buttons.
         // "this" refers to current jQuery object
-        var defaultSizes = buildDefaultFontSizes(this.size()),
-            baseSettings = {
-                selector: $(this).selector,
-                sizes: defaultSizes,
-                selectedIndex: -1
-            },
-            // Set up main options before element iteration
-            settings = $.extend(baseSettings, $.fn.textresizer.defaults, options);
+        defaultSizes = buildDefaultFontSizes(numberOfElements);
+        baseSettings = {
+            selector: this.selector,
+            sizes: defaultSizes,
+            selectedIndex: -1
+        };
+
+        // Set up main options before element iteration
+        settings = $.extend(baseSettings, $.fn.textresizer.defaults, options);
+
+        if (DEBUG_MODE) {
+            debug(settings);
+        }
 
         // Ensure that the number of defined sizes is suitable
         // for number of resize buttons.
