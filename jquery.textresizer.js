@@ -7,7 +7,7 @@
 	Website: http://angstrey.com/
 	Documentation: http://angstrey.com/index.php/projects/jquery-text-resizer-plugin/
 */
-(function ($) {
+;(function ($) {
     "use strict";
 
     var DEBUG_MODE = true;
@@ -32,6 +32,10 @@
     }
 
     function buildDefaultFontSizes(numElms) {
+        if (0 === numElms) {
+            return;
+        }
+
         var size0 = 8,				// Initial size, measured in pixels
             mySizes = [],
             i,
@@ -234,9 +238,16 @@
 
     $.fn.textresizer = function (options) {
         var numberOfElements = this.size(),
-            defaultSizes,
-            baseSettings,
             settings;
+
+        this.defaults = {
+            type: "fontSize",                               // Available options: fontSize, css, cssClass
+            target: "body",                                 // The HTML element to which the new font size will be applied
+            selector: this.selector,
+            sizes: buildDefaultFontSizes(numberOfElements), // Default font sizes based on number of resize buttons.
+            selectedIndex: -1,
+            suppressClickThrough: true                      // Disables click-through of font size controls
+        };
 
         if (DEBUG_MODE) {
             debug("jquery.textresizer => selection count: " + numberOfElements);
@@ -247,17 +258,8 @@
             return;
         }
 
-        // Default font sizes based on number of resize buttons.
-        // "this" refers to current jQuery object
-        defaultSizes = buildDefaultFontSizes(numberOfElements);
-        baseSettings = {
-            selector: this.selector,
-            sizes: defaultSizes,
-            selectedIndex: -1
-        };
-
         // Set up main options before element iteration
-        settings = $.extend(baseSettings, $.fn.textresizer.defaults, options);
+        settings = $.extend({}, this.defaults, options);
 
         if (DEBUG_MODE) {
             debug(settings);
@@ -265,9 +267,9 @@
 
         // Ensure that the number of defined sizes is suitable
         // for number of resize buttons.
-        if (this.size() > settings.sizes.length) {
+        if (numberOfElements > settings.sizes.length) {
             if (DEBUG_MODE) {
-                debug("ERROR: Number of defined sizes incompatible with number of buttons => elements: " + this.size()
+                debug("ERROR: Number of defined sizes incompatible with number of buttons => elements: " + numberOfElements
 				    + "; defined sizes: " + settings.sizes.length
 				    + "; target: " + settings.target);
             }
