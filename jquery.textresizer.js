@@ -1,11 +1,11 @@
 ﻿/*
-	jQuery Text Resizer Plugin v1.1.0-alpha
-	
-	Copyright (c) 2009, 2013 Mario J Vargas
-	See the file MIT-LICENSE.txt for copying permission.
-	
-	Website: http://angstrey.com/
-	Documentation: http://angstrey.com/index.php/projects/jquery-text-resizer-plugin/
+    jQuery Text Resizer Plugin v1.1.0-alpha
+    
+    Copyright (c) 2009, 2013 Mario J Vargas
+    See the file MIT-LICENSE.txt for copying permission.
+    
+    Website: http://angstrey.com/
+    Documentation: http://angstrey.com/index.php/projects/jquery-text-resizer-plugin/
 */
 ;(function ($) {
     "use strict";
@@ -36,7 +36,7 @@
             return;
         }
 
-        var size0 = 8,				// Initial size, measured in pixels
+        var size0 = 8,                // Initial size, measured in pixels
             mySizes = [],
             i,
             value;
@@ -64,30 +64,39 @@
         return mySizes;
     }
 
+    function serializeHash(dictionary) {
+        // jQuery's param() function does not replace white space correctly
+        return $.param(dictionary).replace(/\+/g, "%20");
+    }
+
+    function deserializeHash(serializedValue) {
+        var i,
+            valueCount,
+            keyValuePair,
+            dictionary = {},
+            separatorPattern = /\&|\|/g,
+            dictValues = serializedValue.split(separatorPattern);
+
+        for (i = 0, valueCount = dictValues.length; i < valueCount; i += 1) {
+            // Separate key/value pair and assign to dictionary
+            keyValuePair = dictValues[i].split("=");
+            dictionary[keyValuePair[0]] = window.decodeURIComponent(keyValuePair[1]);
+        }
+
+        // Now that the object is finished, return it
+        return dictionary;
+    }
+
     function buildCookieID(selector, target, prop) {
         return "JQUERY.TEXTRESIZER[" + selector + "," + target + "]." + prop;
     }
 
     function getCookie(selector, target, prop) {
         var id = buildCookieID(selector, target, prop),
-            cookieValue = $.cookie(id),
-            dict = {},
-            dictValues,
-            i,
-            keyValuePair,
-            valueCount;
+            cookieValue = $.cookie(id);
 
         if ($.cookie(id + ".valueType") === "dict" && cookieValue) {
-            dictValues = cookieValue.split("|");
-
-            for (i = 0, valueCount = dictValues.length; i < valueCount; i += 1) {
-                // Separate key/value pair and assign to dictionary
-                keyValuePair = dictValues[i].split("=");
-                dict[keyValuePair[0]] = window.unescape(keyValuePair[1]);
-            }
-
-            // Now that the object is finished, return it
-            return dict;
+            return deserializeHash(cookieValue);
         }
 
         return cookieValue;
@@ -97,29 +106,16 @@
         var id = buildCookieID(selector, target, prop),
             // Cookie expires in 1 year (365 days/year)
             cookieOpts = { expires: 365, path: "/" },
-            dict,
-            dictValues = [],
-            key,
             serializedVals;
 
         // Serialize value if it's an object
         if ("object" === (typeof value)) {
-            // TODO: I think I wrote a JavaScript dictionary object serializer somewhere... Have to find it...
-
             // Store type of value so we can convert it back 
             // to a dictionary object
             $.cookie(id + ".valueType", "dict", cookieOpts);
 
-            // (Assigning reference to variable dict for readability)
-            dict = value;
+            serializedVals = serializeHash(value);
 
-            for (key in dict) {
-                if (dict.hasOwnProperty(key)) {
-                    dictValues.push(key + "=" + window.escape(dict[key]));
-                }
-            }
-
-            serializedVals = dictValues.join("|");
             $.cookie(id, serializedVals, cookieOpts);
 
             if (DEBUG_MODE) {
@@ -129,7 +125,7 @@
             $.cookie(id, value, cookieOpts);
 
             if (DEBUG_MODE) {
-                debug("In setCookie: Cookie: " + id + ": " + value);
+                debug("In setCookie: Cookie (not hash): " + id + ": " + value);
             }
         }
     }
@@ -270,20 +266,19 @@
         if (numberOfElements > settings.sizes.length) {
             if (DEBUG_MODE) {
                 debug("ERROR: Number of defined sizes incompatible with number of buttons => elements: " + numberOfElements
-				    + "; defined sizes: " + settings.sizes.length
-				    + "; target: " + settings.target);
+                    + "; defined sizes: " + settings.sizes.length
+                    + "; target: " + settings.target);
             }
 
-            return;	// Stop execution of the plugin
+            return;    // Stop execution of the plugin
         }
 
         loadPreviousState(settings);
 
         // Iterate and bind click event function to each element
         return this.each(function (i) {
-            var $this = $(this),	// Current resize button
-
-                currSizeValue = settings.sizes[i];	// Size corresponding to this resize button
+            var $this = $(this),                        // Current resize button
+                currSizeValue = settings.sizes[i];      // Size corresponding to this resize button
 
             // Mark this button as active if necessary
             if (i === settings.selectedIndex) {
