@@ -14,19 +14,18 @@
 
     function debug(obj) {
         if (window.console && "function" === (typeof window.console.log)) {
-            var writeToLog = window.console.log,
-                key;
+            var key;
 
             if ("string" === (typeof obj)) {
-                writeToLog("jquery.textresizer => " + obj);
+                console.log("jquery.textresizer => " + obj);
             } else {
-                writeToLog("jquery.textresizer => {");
+                console.log("jquery.textresizer => {");
                 for (key in obj) {
                     if (obj.hasOwnProperty(key)) {
-                        writeToLog("    " + key + ": " + obj[key]);
+                        console.log("    " + key + ": " + obj[key]);
                     }
                 }
-                writeToLog("}");
+                console.log("}");
             }
         }
     }
