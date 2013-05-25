@@ -7,42 +7,42 @@
 
     <script src="js/vendor/jquery/jquery-1.9.1.min.js"></script>
     <script src="js/vendor/jquery/jquery.cookie/jquery.cookie.js"></script>
-	<script src="../jquery.textresizer.js"></script>    
-	<script>
-		jQuery(document).ready( function() {
-			jQuery( "#textsize1 a" ).textresizer({
-				target: "#content1",
-				type: "css",
-				sizes: [
-					{ "font-size"  : "80%",
-					  "color"      : "red"
-					},
-					{ "font-size"  : "100%",
-					  "color"      : "blue"
-					},
-					{ "font-size"  : "120%",
-					  "color"      : "darkgreen"
-					},
-					{ "font-size"  : "140%",
-					  "color"      : "purple"
-					}
-				]
-			});
+    <script src="../jquery.textresizer.js"></script>    
+    <script>
+        jQuery(document).ready( function() {
+            jQuery( "#textsize1 a" ).textresizer({
+                target: "#content1",
+                type: "css",
+                sizes: [
+                    { "font-size"  : "80%",
+                      "color"      : "red"
+                    },
+                    { "font-size"  : "100%",
+                      "color"      : "blue"
+                    },
+                    { "font-size"  : "120%",
+                      "color"      : "darkgreen"
+                    },
+                    { "font-size"  : "140%",
+                      "color"      : "purple"
+                    }
+                ]
+            });
 
-			jQuery( "#textsize2 a" ).textresizer({
-				target: "#content2",
-				sizes:  [ ".8em", "1em", "1.5em", "2em", "2.5em", "3em", "3.5em", "4em", "4.5em" ]
-			});
-			
-			jQuery( "#textsize3 a" ).textresizer({
-				target: "#content3",
-				type: "cssClass",
-				sizes: [ "s0", "s1", "s2", "s3" ]
-			});
-			
-			jQuery( "#notfound a" ).textresizer();	
-		});
-	</script>
+            jQuery( "#textsize2 a" ).textresizer({
+                target: "#content2",
+                sizes:  [ ".8em", "1em", "1.5em", "2em", "2.5em", "3em", "3.5em", "4em", "4.5em" ]
+            });
+            
+            jQuery( "#textsize3 a" ).textresizer({
+                target: "#content3",
+                type: "cssClass",
+                sizes: [ "s0", "s1", "s2", "s3" ]
+            });
+            
+            jQuery( "#notfound a" ).textresizer();    
+        });
+    </script>
 
     <link href="css/reset.css" rel="stylesheet" type="text/css" />
     <link href="css/text.css" rel="stylesheet" type="text/css" />
@@ -52,49 +52,49 @@
 <body>
 
 <div class="container_12">
-	<h1>Multiple Instances of the Text Resizer Plugin</h1>
-	<p>
-		<a href="http://angstrey.com/index.php/projects/jquery-text-resizer-plugin/">Return to Documentation</a>
-	</p>
+    <h1>Multiple Instances of the Text Resizer Plugin</h1>
+    <p>
+        <a href="http://angstrey.com/index.php/projects/jquery-text-resizer-plugin/">Return to Documentation</a>
+    </p>
     <!-- Column 1 -->
     <div class="grid_4">
         Text Size (by CSS properties):
         <ul id="textsize1" class="textresizer">
-	        <li><a href="javascript:void(0)" class="s0" title="small">A</a></li>
-	        <li><a href="javascript:void(0)" class="s1" title="medium">A</a></li>
-	        <li><a href="javascript:void(0)" class="s2" title="larger">A</a></li>
-	        <li><a href="javascript:void(0)" class="s3" title="large">A</a></li>
+            <li><a href="javascript:void(0)" class="s0" title="small">A</a></li>
+            <li><a href="javascript:void(0)" class="s1" title="medium">A</a></li>
+            <li><a href="javascript:void(0)" class="s2" title="larger">A</a></li>
+            <li><a href="javascript:void(0)" class="s3" title="large">A</a></li>
         </ul>
 
         <div id="content1">
-	        <!-- BEGIN: Content -->
-        	
-	        <h1>#content1</h1>
-	        <p>
-		        <a href="http://www.lipsum.com/">Lorem ipsum dolor sit amet</a>, <b>consectetur adipiscing elit</b>. 
-		        <i>Sed laoreet massa est</i>, eu vulputate urna. Class aptent 
-		        taciti sociosqu ad litora torquent per conubia nostra, per 
-		        inceptos himenaeos. <a href="http://nosite.com/">Vestibulum magna mauris</a>, molestie vitae 
-		        sollicitudin id, auctor at orci. Nulla sodales lectus ac est 
-		        fringilla sed vulputate risus lobortis. Quisque interdum 
-		        dignissim molestie. Donec non sapien quis diam varius 
-		        vestibulum. Vestibulum ante ipsum primis in faucibus orci 
-		        luctus et ultrices posuere cubilia Curae; Ut pellentesque 
-		        viverra varius. Aliquam vitae sem ut nibh ultricies consequat 
-		        vel non felis. Etiam felis massa, pretium convallis posuere at, 
-		        accumsan sit amet massa.
-	        </p>
-	        <p>
-		        Suspendisse id purus metus, ac 
-		        consequat nibh. Ut volutpat ultricies lorem quis interdum. 
-		        Vestibulum ante ipsum primis in faucibus orci luctus et 
-		        ultrices posuere cubilia Curae; Vestibulum ante ipsum primis in 
-		        faucibus orci luctus et ultrices posuere cubilia Curae; 
-		        Maecenas accumsan malesuada erat, in auctor erat sagittis ac. 
-		        Maecenas augue turpis, viverra at congue ut, tristique vitae 
-		        erat. Morbi nec tellus a sapien mollis cursus ut eu ipsum. 
-		        Quisque eu vehicula magna.
-	        </p>
+            <!-- BEGIN: Content -->
+            
+            <h1>#content1</h1>
+            <p>
+                <a href="http://www.lipsum.com/">Lorem ipsum dolor sit amet</a>, <b>consectetur adipiscing elit</b>. 
+                <i>Sed laoreet massa est</i>, eu vulputate urna. Class aptent 
+                taciti sociosqu ad litora torquent per conubia nostra, per 
+                inceptos himenaeos. <a href="http://nosite.com/">Vestibulum magna mauris</a>, molestie vitae 
+                sollicitudin id, auctor at orci. Nulla sodales lectus ac est 
+                fringilla sed vulputate risus lobortis. Quisque interdum 
+                dignissim molestie. Donec non sapien quis diam varius 
+                vestibulum. Vestibulum ante ipsum primis in faucibus orci 
+                luctus et ultrices posuere cubilia Curae; Ut pellentesque 
+                viverra varius. Aliquam vitae sem ut nibh ultricies consequat 
+                vel non felis. Etiam felis massa, pretium convallis posuere at, 
+                accumsan sit amet massa.
+            </p>
+            <p>
+                Suspendisse id purus metus, ac 
+                consequat nibh. Ut volutpat ultricies lorem quis interdum. 
+                Vestibulum ante ipsum primis in faucibus orci luctus et 
+                ultrices posuere cubilia Curae; Vestibulum ante ipsum primis in 
+                faucibus orci luctus et ultrices posuere cubilia Curae; 
+                Maecenas accumsan malesuada erat, in auctor erat sagittis ac. 
+                Maecenas augue turpis, viverra at congue ut, tristique vitae 
+                erat. Morbi nec tellus a sapien mollis cursus ut eu ipsum. 
+                Quisque eu vehicula magna.
+            </p>
 
         </div>
     </div>
@@ -103,46 +103,46 @@
     <div class="grid_4">
         Text Size (by font size):
         <ul id="textsize2" class="textresizer">
-	        <li><a href="javascript:void(0)" class="s0" title="small">A</a></li>
-	        <li><a href="javascript:void(0)" class="s1" title="medium">A</a></li>
-	        <li><a href="javascript:void(0)" class="s2" title="larger">A</a></li>
-	        <li><a href="javascript:void(0)" class="s3" title="large">A</a></li>
-	        <li><a href="javascript:void(0)" class="s4" title="x-large">A</a></li>
-	        <li><a href="javascript:void(0)" class="s5" title="xx-large">A</a></li>
-	        <li><a href="javascript:void(0)" class="s6" title="super extra large">A</a></li>
-	        <li><a href="javascript:void(0)" class="s7" title="more than super extra large">A</a></li>
-	        <li><a href="javascript:void(0)" class="s8" title="Humongous">A</a></li>
+            <li><a href="javascript:void(0)" class="s0" title="small">A</a></li>
+            <li><a href="javascript:void(0)" class="s1" title="medium">A</a></li>
+            <li><a href="javascript:void(0)" class="s2" title="larger">A</a></li>
+            <li><a href="javascript:void(0)" class="s3" title="large">A</a></li>
+            <li><a href="javascript:void(0)" class="s4" title="x-large">A</a></li>
+            <li><a href="javascript:void(0)" class="s5" title="xx-large">A</a></li>
+            <li><a href="javascript:void(0)" class="s6" title="super extra large">A</a></li>
+            <li><a href="javascript:void(0)" class="s7" title="more than super extra large">A</a></li>
+            <li><a href="javascript:void(0)" class="s8" title="Humongous">A</a></li>
         </ul>
 
         <div id="content2">
-	        <h1>#content2</h1>
-	        <p>
-		        Suspendisse id purus metus, ac 
-		        consequat nibh. Ut volutpat ultricies lorem quis interdum. 
-		        Vestibulum ante ipsum primis in faucibus orci luctus et 
-		        ultrices posuere cubilia Curae; Vestibulum ante ipsum primis in 
-		        faucibus orci luctus et ultrices posuere cubilia Curae; 
-		        Maecenas accumsan malesuada erat, in auctor erat sagittis ac. 
-		        Maecenas augue turpis, viverra at congue ut, tristique vitae 
-		        erat. Morbi nec tellus a sapien mollis cursus ut eu ipsum. 
-		        Quisque eu vehicula magna.
-	        </p>
+            <h1>#content2</h1>
+            <p>
+                Suspendisse id purus metus, ac 
+                consequat nibh. Ut volutpat ultricies lorem quis interdum. 
+                Vestibulum ante ipsum primis in faucibus orci luctus et 
+                ultrices posuere cubilia Curae; Vestibulum ante ipsum primis in 
+                faucibus orci luctus et ultrices posuere cubilia Curae; 
+                Maecenas accumsan malesuada erat, in auctor erat sagittis ac. 
+                Maecenas augue turpis, viverra at congue ut, tristique vitae 
+                erat. Morbi nec tellus a sapien mollis cursus ut eu ipsum. 
+                Quisque eu vehicula magna.
+            </p>
 
-	        <h2>H2 consectetur adipiscing elit</h2>
-	        <p>
-		        Lorem ipsum dolor sit amet, <b>consectetur adipiscing elit</b>. 
-		        <i>Sed laoreet massa est</i>, eu vulputate urna. Class aptent 
-		        taciti sociosqu ad litora torquent per conubia nostra, per 
-		        inceptos himenaeos. Vestibulum magna mauris, molestie vitae 
-		        sollicitudin id, auctor at orci. Nulla sodales lectus ac est 
-		        fringilla sed vulputate risus lobortis. Quisque interdum 
-		        dignissim molestie. Donec non sapien quis diam varius 
-		        vestibulum. Vestibulum ante ipsum primis in faucibus orci 
-		        luctus et ultrices posuere cubilia Curae; Ut pellentesque 
-		        viverra varius. Aliquam vitae sem ut nibh ultricies consequat 
-		        vel non felis. Etiam felis massa, pretium convallis posuere at, 
-		        accumsan sit amet massa.
-	        </p>
+            <h2>H2 consectetur adipiscing elit</h2>
+            <p>
+                Lorem ipsum dolor sit amet, <b>consectetur adipiscing elit</b>. 
+                <i>Sed laoreet massa est</i>, eu vulputate urna. Class aptent 
+                taciti sociosqu ad litora torquent per conubia nostra, per 
+                inceptos himenaeos. Vestibulum magna mauris, molestie vitae 
+                sollicitudin id, auctor at orci. Nulla sodales lectus ac est 
+                fringilla sed vulputate risus lobortis. Quisque interdum 
+                dignissim molestie. Donec non sapien quis diam varius 
+                vestibulum. Vestibulum ante ipsum primis in faucibus orci 
+                luctus et ultrices posuere cubilia Curae; Ut pellentesque 
+                viverra varius. Aliquam vitae sem ut nibh ultricies consequat 
+                vel non felis. Etiam felis massa, pretium convallis posuere at, 
+                accumsan sit amet massa.
+            </p>
         </div>
     </div>
     
@@ -151,41 +151,41 @@
 
         Text Size (by CSS class names):
         <ul id="textsize3" class="textresizer">
-	        <li><a href="javascript:void(0)" class="s0" title="small">A</a></li>
-	        <li><a href="javascript:void(0)" class="s1" title="medium">A</a></li>
-	        <li><a href="javascript:void(0)" class="s2" title="larger">A</a></li>
-	        <li><a href="javascript:void(0)" class="s3" title="large">A</a></li>
+            <li><a href="javascript:void(0)" class="s0" title="small">A</a></li>
+            <li><a href="javascript:void(0)" class="s1" title="medium">A</a></li>
+            <li><a href="javascript:void(0)" class="s2" title="larger">A</a></li>
+            <li><a href="javascript:void(0)" class="s3" title="large">A</a></li>
         </ul>
 
 
         <div id="content3">
-	        <h1>#content3</h1>
-	        <h3>H3 Sed laoreet massa est</h3>
-	        <p>
-		        Lorem ipsum dolor sit amet, <b>consectetur adipiscing elit</b>. 
-		        <i>Sed laoreet massa est</i>, eu vulputate urna. Class aptent 
-		        taciti sociosqu ad litora torquent per conubia nostra, per 
-		        inceptos himenaeos. Vestibulum magna mauris, molestie vitae 
-		        sollicitudin id, auctor at orci. Nulla sodales lectus ac est 
-		        fringilla sed vulputate risus lobortis. Quisque interdum 
-		        dignissim molestie. Donec non sapien quis diam varius 
-		        vestibulum. Vestibulum ante ipsum primis in faucibus orci 
-		        luctus et ultrices posuere cubilia Curae; Ut pellentesque 
-		        viverra varius. Aliquam vitae sem ut nibh ultricies consequat 
-		        vel non felis. Etiam felis massa, pretium convallis posuere at, 
-		        accumsan sit amet massa.
-	        </p>
-	        <p>
-		        Suspendisse id purus metus, ac 
-		        consequat nibh. Ut volutpat ultricies lorem quis interdum. 
-		        Vestibulum ante ipsum primis in faucibus orci luctus et 
-		        ultrices posuere cubilia Curae; Vestibulum ante ipsum primis in 
-		        faucibus orci luctus et ultrices posuere cubilia Curae; 
-		        Maecenas accumsan malesuada erat, in auctor erat sagittis ac. 
-		        Maecenas augue turpis, viverra at congue ut, tristique vitae 
-		        erat. Morbi nec tellus a sapien mollis cursus ut eu ipsum. 
-		        Quisque eu vehicula magna.
-	        </p>
+            <h1>#content3</h1>
+            <h3>H3 Sed laoreet massa est</h3>
+            <p>
+                Lorem ipsum dolor sit amet, <b>consectetur adipiscing elit</b>. 
+                <i>Sed laoreet massa est</i>, eu vulputate urna. Class aptent 
+                taciti sociosqu ad litora torquent per conubia nostra, per 
+                inceptos himenaeos. Vestibulum magna mauris, molestie vitae 
+                sollicitudin id, auctor at orci. Nulla sodales lectus ac est 
+                fringilla sed vulputate risus lobortis. Quisque interdum 
+                dignissim molestie. Donec non sapien quis diam varius 
+                vestibulum. Vestibulum ante ipsum primis in faucibus orci 
+                luctus et ultrices posuere cubilia Curae; Ut pellentesque 
+                viverra varius. Aliquam vitae sem ut nibh ultricies consequat 
+                vel non felis. Etiam felis massa, pretium convallis posuere at, 
+                accumsan sit amet massa.
+            </p>
+            <p>
+                Suspendisse id purus metus, ac 
+                consequat nibh. Ut volutpat ultricies lorem quis interdum. 
+                Vestibulum ante ipsum primis in faucibus orci luctus et 
+                ultrices posuere cubilia Curae; Vestibulum ante ipsum primis in 
+                faucibus orci luctus et ultrices posuere cubilia Curae; 
+                Maecenas accumsan malesuada erat, in auctor erat sagittis ac. 
+                Maecenas augue turpis, viverra at congue ut, tristique vitae 
+                erat. Morbi nec tellus a sapien mollis cursus ut eu ipsum. 
+                Quisque eu vehicula magna.
+            </p>
         </div>
 
     </div>
