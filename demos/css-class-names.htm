@@ -1,9 +1,18 @@
 ﻿<!DOCTYPE html>
-
-<html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>CSS Class Names</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link href="css/960.css" rel="stylesheet" />
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 
     <!-- BEGIN: Syntax Highlighter -->
     <link href="js/vendor/syntaxhighlighter/styles/shCore.css" rel="stylesheet" />
@@ -17,17 +26,14 @@
     </script> 
     <!-- END: Syntax Highlighter -->
 
-    <link href="css/reset.css" rel="stylesheet" />
-    <link href="css/text.css" rel="stylesheet" />
-    <link href="css/960.css" rel="stylesheet" />
+    <!-- BEGIN: Code Relevant to Demo -->
     <link href="css/css-classes-demo.css" rel="stylesheet" />
-
     <script src="js/vendor/jquery/jquery-1.9.1.min.js"></script>
     <script src="js/vendor/jquery/jquery.cookie/jquery.cookie.js"></script>
     <script src="../jquery.textresizer.js"></script>    
     <script>
-        jQuery(document).ready( function() {
-            jQuery( "#textsizer-classnames a" ).textresizer({
+        $(document).ready( function() {
+            $( "#textsizer-classnames a" ).textresizer({
                 target: "#maincontent",
                 type: "cssClass",
                 sizes: [ "small-text", "medium-text", "large-text", "larger-text" ],
@@ -35,11 +41,11 @@
             });
         });
     </script>
-    
+    <!-- END: Code Relevant to Demo -->
 </head>
 <body>
 
-    <div class="container_12">
+    <div class="container_12 clearfix">
         <h1>Demo Using the "cssClass" Type</h1>
         <p>
             <a href="http://angstrey.com/index.php/projects/jquery-text-resizer-plugin/">Return to Documentation</a>
@@ -60,13 +66,14 @@
             <div id="maincontent">
                 <h1>Lorem Ipsum Dolor Sit Amet</h1>
                 <p>
-                    <a href="http://www.lipsum.com/">Lorem ipsum dolor sit amet</a>, <b>consectetur adipiscing elit</b>. 
-                    <i>Sed laoreet massa est</i>, eu vulputate urna. Class aptent 
+                    <a href="http://www.lipsum.com/">Lorem ipsum dolor sit amet</a>, 
+                    <strong>consectetur adipiscing elit</strong>. 
+                    <em>Sed laoreet massa est</em>, eu vulputate urna. Class aptent 
                     taciti sociosqu ad litora torquent per conubia nostra, per 
-                    inceptos himenaeos. <a href="http://nosite.com/">Vestibulum magna mauris</a>, molestie vitae 
-                    sollicitudin id, auctor at orci. Nulla sodales lectus ac est 
-                    fringilla sed vulputate risus lobortis. Quisque interdum 
-                    dignissim molestie. Donec non sapien quis diam varius 
+                    inceptos himenaeos. <a href="http://nosite.com/">Vestibulum magna mauris</a>, 
+                    molestie vitae sollicitudin id, auctor at orci. Nulla sodales 
+                    lectus ac est fringilla sed vulputate risus lobortis. Quisque 
+                    interdum dignissim molestie. Donec non sapien quis diam varius 
                     vestibulum. Vestibulum ante ipsum primis in faucibus orci 
                     luctus et ultrices posuere cubilia Curae; Ut pellentesque 
                     viverra varius. Aliquam vitae sem ut nibh ultricies consequat 
@@ -187,8 +194,8 @@ ul.textresizer
 &lt;script src=&quot;jquery.cookie.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;jquery.textresizer.js&quot;&gt;&lt;/script&gt;    
 &lt;script&gt;
-   jQuery(document).ready( function() {
-      jQuery( &quot;#textsizer-classnames a&quot; ).textresizer({
+   $(document).ready( function() {
+      $( &quot;#textsizer-classnames a&quot; ).textresizer({
          target: &quot;#maincontent&quot;,
          type: &quot;cssClass&quot;,
          sizes: [ 
@@ -218,13 +225,14 @@ ul.textresizer
 &lt;div id=&quot;maincontent&quot;&gt;
    &lt;h1&gt;Lorem Ipsum Dolor Sit Amet&lt;/h1&gt;
    &lt;p&gt;
-      &lt;a href=&quot;http://www.lipsum.com/&quot;&gt;Lorem ipsum dolor sit amet&lt;/a&gt;, &lt;b&gt;consectetur adipiscing elit&lt;/b&gt;. 
-      &lt;i&gt;Sed laoreet massa est&lt;/i&gt;, eu vulputate urna. Class aptent 
+      &lt;a href=&quot;http://www.lipsum.com/&quot;&gt;Lorem ipsum dolor sit amet&lt;/a&gt;, 
+      &lt;strong&gt;consectetur adipiscing elit&lt;/strong&gt;. 
+      &lt;em&gt;Sed laoreet massa est&lt;/em&gt;, eu vulputate urna. Class aptent 
       taciti sociosqu ad litora torquent per conubia nostra, per 
-      inceptos himenaeos. &lt;a href=&quot;http://nosite.com/&quot;&gt;Vestibulum magna mauris&lt;/a&gt;, molestie vitae 
-      sollicitudin id, auctor at orci. Nulla sodales lectus ac est 
-      fringilla sed vulputate risus lobortis. Quisque interdum 
-      dignissim molestie. Donec non sapien quis diam varius 
+      inceptos himenaeos. &lt;a href=&quot;http://nosite.com/&quot;&gt;Vestibulum magna mauris&lt;/a&gt;, 
+      molestie vitae sollicitudin id, auctor at orci. Nulla sodales 
+      lectus ac est fringilla sed vulputate risus lobortis. Quisque 
+      interdum dignissim molestie. Donec non sapien quis diam varius 
       vestibulum. Vestibulum ante ipsum primis in faucibus orci 
       luctus et ultrices posuere cubilia Curae; Ut pellentesque 
       viverra varius. Aliquam vitae sem ut nibh ultricies consequat 
