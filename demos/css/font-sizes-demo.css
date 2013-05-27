@@ -50,22 +50,22 @@
 
         ul.textresizer .small-text
         {
-            font-size: 11px;
+            font-size: 12px;
         }
             
         ul.textresizer .medium-text
         {
-            font-size: 13px;
+            font-size: 14px;
         }
             
         ul.textresizer .large-text
         {
-            font-size: 15px;
+            font-size: 16px;
         }
             
         ul.textresizer .larger-text
         {
-            font-size: 17px;
+            font-size: 18px;
         }
 
         ul.textresizer a.textresizer-active

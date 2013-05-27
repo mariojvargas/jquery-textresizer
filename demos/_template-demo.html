@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Font Sizes</title>
+    <title>Demo Template</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="css/normalize.css" />
@@ -27,19 +27,19 @@
     <!-- END: Syntax Highlighter -->
 
     <!-- BEGIN: Code Relevant to Demo -->
-    <link href="css/font-sizes-demo.css" rel="stylesheet" />
+    <!--<link href="css/font-sizes-demo.css" rel="stylesheet" />-->
     <script src="js/vendor/jquery/jquery-1.9.1.min.js"></script>
     <script src="js/vendor/jquery/jquery.cookie/jquery.cookie.js"></script>
     <script src="../jquery.textresizer.js"></script>    
     <script>
-        $(document).ready(function () {
-            $("#textsizer a").textresizer({
-                target: "#maincontent",
-                type: "fontSize",
-                sizes: [ "12px", "14px", "16px", "18px" ],
-                selectedIndex: 1
-            });
-        });
+        //$(document).ready(function () {
+        //    $("#textsizer a").textresizer({
+        //        target: "#maincontent",
+        //        type: "fontSize",
+        //        sizes: ["12px", "14px", "16px", "18px"],
+        //        selectedIndex: 1
+        //    });
+        //});
     </script>
     <!-- END: Code Relevant to Demo -->
 </head>
@@ -51,10 +51,7 @@
                 <h1>jQuery Text Resizer</h1>
             </header>
 
-            <h2>Demo Using the "fontSize" Type</h2>
-            <p>
-                <a href="http://angstrey.com/index.php/projects/jquery-text-resizer-plugin/">Return to Documentation</a>
-            </p>
+            <h2>Demo</h2>
 
             <section>
                 <h3>Live Example</h3>
@@ -104,84 +101,8 @@
 
                 <section>
                     <h4>CSS</h4>
-                    <p>
-                        Note that in this example I am defining the look and feel 
-                        of the resize buttons via CSS, even though in the JavaScript 
-                        I am using the <strong>"fontSize"</strong> <strong>type</strong>
-                        and then redefining the size of the targetted content via the 
-                        <strong>sizes</strong> property.
-                    </p>
 
                     <pre id="css-code" class="brush:css">
-#textsizer
-{
-    margin-bottom: 6px;
-}
-    #textsizer p
-    {
-        display: inline;
-    }
-ul.textresizer
-{
-    list-style: none;
-    display: inline;
-    margin: 0px;
-    padding: 0px;
-}
-    ul.textresizer li
-    {
-        display: inline;
-        margin: 0px;
-        margin-right: 5px;
-        padding: 0px;
-    }
-
-    ul.textresizer a
-    {
-        border: solid 1px #999;
-        padding: 2px 3px;
-        font-weight: bold;
-        text-decoration: none;
-    }
-    
-    ul.textresizer a:hover
-    {
-        background: #e5e5e5;
-        border: solid 1px #cccccc;
-        
-    }
-
-    ul.textresizer .small-text
-    {
-        font-size: 12px;
-    }
-    
-    ul.textresizer .medium-text
-    {
-        font-size: 14px;
-    }
-    
-    ul.textresizer .large-text
-    {
-        font-size: 16px;
-    }
-    
-    ul.textresizer .larger-text
-    {
-        font-size: 18px;
-    }
-
-    ul.textresizer a.textresizer-active
-    {
-        border: solid 1px #2B562B;
-        background: #FFCA6F;
-        color: #000000;                
-    }
-
-#maincontent 
-{
-    background: #ffffcc;
-}
                     </pre>
                 </section>
         
@@ -189,19 +110,6 @@ ul.textresizer
                     <h4>JavaScript/jQuery Code</h4>
 
                     <pre id="js-code" class="brush:html; toolbar: true;">
-&lt;script src=&quot;jquery.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;jquery.cookie.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;jquery.textresizer.js&quot;&gt;&lt;/script&gt;    
-&lt;script&gt;
-   $(document).ready(function () {
-      $(&quot;#textsizer a&quot;).textresizer({
-         target: &quot;#maincontent&quot;,
-         type: &quot;fontSize&quot;,
-         sizes: [ &quot;12px&quot;, &quot;14px&quot;, &quot;16px&quot;, &quot;18px&quot; ],
-         selectedIndex: 1
-      });
-   });
-&lt;/script&gt;
                     </pre>
                 </section>
 
@@ -252,9 +160,7 @@ ul.textresizer
                 </section>
 
             </section>
-        </div>
-
-
-    </div>
+        </div> <!-- /.grid_12 -->
+    </div> <!-- /.container_12 -->
 </body>
 </html>

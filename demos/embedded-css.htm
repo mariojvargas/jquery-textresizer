@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -39,28 +39,28 @@
                 sizes: [
                     // Small. Index 0
                     {
-                        "font-size": "11px",
+                        "font-size": "12px",
                         "color": "red",
                         "background": "#e5e5e5"
                     },
 
                     // Medium. Index 1
                     {
-                        "font-size": "13px",
+                        "font-size": "14px",
                         "color": "blue",
                         "background": "#ffffcc"
                     },
 
                     // Large. Index 2
                     {
-                        "font-size": "15px",
+                        "font-size": "16px",
                         "color": "darkgreen",
                         "background": "#EFEFD1"
                     },
 
                     // Larger. Index 3
                     {
-                        "font-size": "17px",
+                        "font-size": "18px",
                         "color": "#333333",
                         "background": "#E0E0EF"
                     }
@@ -74,66 +74,75 @@
 <body>
 
     <div class="container_12 clearfix">
-        <h1>Demo Using the "css" Type (Embedded CSS Styles)</h1>
-        <p>
-            <a href="http://angstrey.com/index.php/projects/jquery-text-resizer-plugin/">Return to Documentation</a>
-        </p>
-        <!-- Live Example -->
         <div class="grid_12">
-            <h3>Live Example</h3>
-            <div id="textsizer-embed">
-               <p>Font Size:</p>
-               <ul class="textresizer">
-                   <li><a href="#nogo" class="small-text">Small</a></li>
-                   <li><a href="#nogo" class="medium-text">Medium</a></li>
-                   <li><a href="#nogo" class="large-text">Large</a></li>
-                   <li><a href="#nogo" class="larger-text">X-Large</a></li>
-               </ul>
-            </div>
+            <header>
+                <h1>jQuery Text Resizer</h1>
+            </header>
 
-            <div id="maincontent">
-                <h1>Lorem Ipsum Dolor Sit Amet</h1>
-                <p>
-                    <a href="http://www.lipsum.com/">Lorem ipsum dolor sit amet</a>, 
-                    <strong>consectetur adipiscing elit</strong>. 
-                    <em>Sed laoreet massa est</em>, eu vulputate urna. Class aptent 
-                    taciti sociosqu ad litora torquent per conubia nostra, per 
-                    inceptos himenaeos. <a href="http://nosite.com/">Vestibulum magna mauris</a>, 
-                    molestie vitae sollicitudin id, auctor at orci. Nulla sodales 
-                    lectus ac est fringilla sed vulputate risus lobortis. Quisque 
-                    interdum dignissim molestie. Donec non sapien quis diam varius 
-                    vestibulum. Vestibulum ante ipsum primis in faucibus orci 
-                    luctus et ultrices posuere cubilia Curae; Ut pellentesque 
-                    viverra varius. Aliquam vitae sem ut nibh ultricies consequat 
-                    vel non felis. Etiam felis massa, pretium convallis posuere at, 
-                    accumsan sit amet massa.
-                </p>
-                <p>
-                    Suspendisse id purus metus, ac 
-                    consequat nibh. Ut volutpat ultricies lorem quis interdum. 
-                    Vestibulum ante ipsum primis in faucibus orci luctus et 
-                    ultrices posuere cubilia Curae; Vestibulum ante ipsum primis in 
-                    faucibus orci luctus et ultrices posuere cubilia Curae; 
-                    Maecenas accumsan malesuada erat, in auctor erat sagittis ac. 
-                    Maecenas augue turpis, viverra at congue ut, tristique vitae 
-                    erat. Morbi nec tellus a sapien mollis cursus ut eu ipsum. 
-                    Quisque eu vehicula magna.
-                </p>    
-            </div>
-        </div>
-        <div class="clear"></div>
-        
-        <!-- Code being used -->
-        <h2>Code Being Used</h2>
-        <h3>CSS</h3>
-        <p>
-            Note that in this example I am defining the look and feel 
-            of the resize buttons via CSS, even though in the JavaScript 
-            I am using the <strong>"css"</strong> <strong>type</strong>
-            and then embedding the CSS styles for the targetted content
-            in the <strong>sizes</strong> property.
-        </p>
-        <pre id="css-code" class="brush:css">
+            <h2>Demo Using the "css" Type (Embedded CSS Styles)</h2>
+            <p>
+                <a href="http://angstrey.com/index.php/projects/jquery-text-resizer-plugin/">Return to Documentation</a>
+            </p>
+
+            <section>
+                <h3>Live Example</h3>
+
+                <div id="textsizer-embed">
+                   <p>Font Size:</p>
+                   <ul class="textresizer">
+                       <li><a href="#nogo" class="small-text">Small</a></li>
+                       <li><a href="#nogo" class="medium-text">Medium</a></li>
+                       <li><a href="#nogo" class="large-text">Large</a></li>
+                       <li><a href="#nogo" class="larger-text">X-Large</a></li>
+                   </ul>
+                </div>
+
+                <article id="maincontent">
+                    <h1>Lorem Ipsum Dolor Sit Amet</h1>
+                    <p>
+                        <a href="http://www.lipsum.com/">Lorem ipsum dolor sit amet</a>, 
+                        <strong>consectetur adipiscing elit</strong>. 
+                        <em>Sed laoreet massa est</em>, eu vulputate urna. Class aptent 
+                        taciti sociosqu ad litora torquent per conubia nostra, per 
+                        inceptos himenaeos. <a href="http://nosite.com/">Vestibulum magna mauris</a>, 
+                        molestie vitae sollicitudin id, auctor at orci. Nulla sodales 
+                        lectus ac est fringilla sed vulputate risus lobortis. Quisque 
+                        interdum dignissim molestie. Donec non sapien quis diam varius 
+                        vestibulum. Vestibulum ante ipsum primis in faucibus orci 
+                        luctus et ultrices posuere cubilia Curae; Ut pellentesque 
+                        viverra varius. Aliquam vitae sem ut nibh ultricies consequat 
+                        vel non felis. Etiam felis massa, pretium convallis posuere at, 
+                        accumsan sit amet massa.
+                    </p>
+                    <p>
+                        Suspendisse id purus metus, ac 
+                        consequat nibh. Ut volutpat ultricies lorem quis interdum. 
+                        Vestibulum ante ipsum primis in faucibus orci luctus et 
+                        ultrices posuere cubilia Curae; Vestibulum ante ipsum primis in 
+                        faucibus orci luctus et ultrices posuere cubilia Curae; 
+                        Maecenas accumsan malesuada erat, in auctor erat sagittis ac. 
+                        Maecenas augue turpis, viverra at congue ut, tristique vitae 
+                        erat. Morbi nec tellus a sapien mollis cursus ut eu ipsum. 
+                        Quisque eu vehicula magna.
+                    </p>    
+                </article>
+            </section>
+
+            <section>
+                <h3>Code Being Used</h3>
+
+                <section>
+                    <h4>CSS</h4>
+                    
+                    <p>
+                        Note that in this example I am defining the look and feel 
+                        of the resize buttons via CSS, even though in the JavaScript 
+                        I am using the <strong>"css"</strong> <strong>type</strong>
+                        and then embedding the CSS styles for the targetted content
+                        in the <strong>sizes</strong> property.
+                    </p>
+
+                    <pre id="css-code" class="brush:css">
 #textsizer-embed
 {
     margin-bottom: 6px;
@@ -174,22 +183,22 @@ ul.textresizer
 
     ul.textresizer .small-text
     {
-        font-size: 11px;
+        font-size: 12px;
     }
     
     ul.textresizer .medium-text
     {
-        font-size: 13px;
+        font-size: 14px;
     }
     
     ul.textresizer .large-text
     {
-        font-size: 15px;
+        font-size: 16px;
     }
     
     ul.textresizer .larger-text
     {
-        font-size: 17px;
+        font-size: 18px;
     }
 
     ul.textresizer a.textresizer-active
@@ -203,10 +212,13 @@ ul.textresizer
 {
     background: #ffffcc;
 }
-        </pre>
+                    </pre>
+                </section>
 
-        <h3>JavaScript/jQuery Code</h3>
-        <pre id="js-code" class="brush:html">
+                <section>
+                    <h4>JavaScript/jQuery Code</h4>
+
+                    <pre id="js-code" class="brush:html">
 &lt;script src=&quot;jquery.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;jquery.cookie.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;jquery.textresizer.js&quot;&gt;&lt;/script&gt;    
@@ -217,25 +229,25 @@ ul.textresizer
          type: &quot;css&quot;,
          sizes: [
             // Small. Index 0
-            { &quot;font-size&quot; : &quot;80%&quot;,
+            { &quot;font-size&quot; : &quot;12px&quot;,
               &quot;color&quot;     : &quot;red&quot;,
               &quot;background&quot;: &quot;#e5e5e5&quot;
             },
 
             // Medium. Index 1
-            { &quot;font-size&quot; : &quot;100%&quot;,
+            { &quot;font-size&quot; : &quot;14px&quot;,
               &quot;color&quot;     : &quot;blue&quot;,
               &quot;background&quot;: &quot;#ffffcc&quot;
             },
 
             // Large. Index 2
-            { &quot;font-size&quot; : &quot;120%&quot;,
+            { &quot;font-size&quot; : &quot;16px&quot;,
               &quot;color&quot;     : &quot;darkgreen&quot;,
               &quot;background&quot;: &quot;#EFEFD1&quot;
             },
 
             // Larger. Index 3
-            { &quot;font-size&quot; : &quot;140%&quot;,
+            { &quot;font-size&quot; : &quot;18px&quot;,
               &quot;color&quot;     : &quot;#333333&quot;,
               &quot;background&quot;: &quot;#E0E0EF&quot;
             }
@@ -244,10 +256,14 @@ ul.textresizer
       });
    });
 &lt;/script&gt;
-        </pre>
+                    </pre>
         
-        <h3>HTML</h3>
-        <pre id="html-code" class="brush:html">
+                </section>
+
+                <section>
+                    <h4>HTML</h4>
+
+                    <pre id="html-code" class="brush:html">
 &lt;div id=&quot;textsizer-embed&quot;&gt;
    &lt;p&gt;Font Size:&lt;/p&gt;
    &lt;ul class=&quot;textresizer&quot;&gt;
@@ -258,7 +274,7 @@ ul.textresizer
    &lt;/ul&gt;
 &lt;/div&gt;
 
-&lt;div id=&quot;maincontent&quot;&gt;
+&lt;article id=&quot;maincontent&quot;&gt;
    &lt;h1&gt;Lorem Ipsum Dolor Sit Amet&lt;/h1&gt;
    &lt;p&gt;
       &lt;a href=&quot;http://www.lipsum.com/&quot;&gt;Lorem ipsum dolor sit amet&lt;/a&gt;, 
@@ -286,9 +302,12 @@ ul.textresizer
       erat. Morbi nec tellus a sapien mollis cursus ut eu ipsum. 
       Quisque eu vehicula magna.
    &lt;/p&gt;   
-&lt;/div&gt;
-        </pre>
-        
+&lt;/article&gt;
+                    </pre>
+                </section>
+
+            </section>
+        </div>
     </div>
 
 </body>

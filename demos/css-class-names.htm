@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -32,8 +32,8 @@
     <script src="js/vendor/jquery/jquery.cookie/jquery.cookie.js"></script>
     <script src="../jquery.textresizer.js"></script>    
     <script>
-        $(document).ready( function() {
-            $( "#textsizer-classnames a" ).textresizer({
+        $(document).ready(function () {
+            $("#textsizer-classnames a").textresizer({
                 target: "#maincontent",
                 type: "cssClass",
                 sizes: [ "small-text", "medium-text", "large-text", "larger-text" ],
@@ -46,58 +46,66 @@
 <body>
 
     <div class="container_12 clearfix">
-        <h1>Demo Using the "cssClass" Type</h1>
-        <p>
-            <a href="http://angstrey.com/index.php/projects/jquery-text-resizer-plugin/">Return to Documentation</a>
-        </p>
-        <!-- Live Example -->
-        <div class="grid_12 clearfix">
-            <h3>Live Example</h3>
-            <div id="textsizer-classnames">
-               <p>Font Size:</p>
-               <ul class="textresizer">
-                   <li><a href="#nogo" class="small-text" title="Small">A</a></li>
-                   <li><a href="#nogo" class="medium-text" title="Medium">A</a></li>
-                   <li><a href="#nogo" class="large-text" title="Large">A</a></li>
-                   <li><a href="#nogo" class="larger-text" title="Larger">A</a></li>
-               </ul>
-            </div>
+        <div class="grid_12">
+            <header>
+                <h1>jQuery Text Resizer</h1>
+            </header>
 
-            <div id="maincontent">
-                <h1>Lorem Ipsum Dolor Sit Amet</h1>
-                <p>
-                    <a href="http://www.lipsum.com/">Lorem ipsum dolor sit amet</a>, 
-                    <strong>consectetur adipiscing elit</strong>. 
-                    <em>Sed laoreet massa est</em>, eu vulputate urna. Class aptent 
-                    taciti sociosqu ad litora torquent per conubia nostra, per 
-                    inceptos himenaeos. <a href="http://nosite.com/">Vestibulum magna mauris</a>, 
-                    molestie vitae sollicitudin id, auctor at orci. Nulla sodales 
-                    lectus ac est fringilla sed vulputate risus lobortis. Quisque 
-                    interdum dignissim molestie. Donec non sapien quis diam varius 
-                    vestibulum. Vestibulum ante ipsum primis in faucibus orci 
-                    luctus et ultrices posuere cubilia Curae; Ut pellentesque 
-                    viverra varius. Aliquam vitae sem ut nibh ultricies consequat 
-                    vel non felis. Etiam felis massa, pretium convallis posuere at, 
-                    accumsan sit amet massa.
-                </p>
-                <p>
-                    Suspendisse id purus metus, ac 
-                    consequat nibh. Ut volutpat ultricies lorem quis interdum. 
-                    Vestibulum ante ipsum primis in faucibus orci luctus et 
-                    ultrices posuere cubilia Curae; Vestibulum ante ipsum primis in 
-                    faucibus orci luctus et ultrices posuere cubilia Curae; 
-                    Maecenas accumsan malesuada erat, in auctor erat sagittis ac. 
-                    Maecenas augue turpis, viverra at congue ut, tristique vitae 
-                    erat. Morbi nec tellus a sapien mollis cursus ut eu ipsum. 
-                    Quisque eu vehicula magna.
-                </p>    
-            </div>
-        </div>
+            <h2>Demo Using the "cssClass" Type</h2>
+            <p>
+                <a href="http://angstrey.com/index.php/projects/jquery-text-resizer-plugin/">Return to Documentation</a>
+            </p>
+            
+            <section>
+                <h3>Live Example</h3>
+                <div id="textsizer-classnames">
+                   <p>Font Size:</p>
+                   <ul class="textresizer">
+                       <li><a href="#nogo" class="small-text" title="Small">A</a></li>
+                       <li><a href="#nogo" class="medium-text" title="Medium">A</a></li>
+                       <li><a href="#nogo" class="large-text" title="Large">A</a></li>
+                       <li><a href="#nogo" class="larger-text" title="Larger">A</a></li>
+                   </ul>
+                </div>
+
+                <article id="maincontent">
+                    <h1>Lorem Ipsum Dolor Sit Amet</h1>
+                    <p>
+                        <a href="http://www.lipsum.com/">Lorem ipsum dolor sit amet</a>, 
+                        <strong>consectetur adipiscing elit</strong>. 
+                        <em>Sed laoreet massa est</em>, eu vulputate urna. Class aptent 
+                        taciti sociosqu ad litora torquent per conubia nostra, per 
+                        inceptos himenaeos. <a href="http://nosite.com/">Vestibulum magna mauris</a>, 
+                        molestie vitae sollicitudin id, auctor at orci. Nulla sodales 
+                        lectus ac est fringilla sed vulputate risus lobortis. Quisque 
+                        interdum dignissim molestie. Donec non sapien quis diam varius 
+                        vestibulum. Vestibulum ante ipsum primis in faucibus orci 
+                        luctus et ultrices posuere cubilia Curae; Ut pellentesque 
+                        viverra varius. Aliquam vitae sem ut nibh ultricies consequat 
+                        vel non felis. Etiam felis massa, pretium convallis posuere at, 
+                        accumsan sit amet massa.
+                    </p>
+                    <p>
+                        Suspendisse id purus metus, ac 
+                        consequat nibh. Ut volutpat ultricies lorem quis interdum. 
+                        Vestibulum ante ipsum primis in faucibus orci luctus et 
+                        ultrices posuere cubilia Curae; Vestibulum ante ipsum primis in 
+                        faucibus orci luctus et ultrices posuere cubilia Curae; 
+                        Maecenas accumsan malesuada erat, in auctor erat sagittis ac. 
+                        Maecenas augue turpis, viverra at congue ut, tristique vitae 
+                        erat. Morbi nec tellus a sapien mollis cursus ut eu ipsum. 
+                        Quisque eu vehicula magna.
+                    </p>    
+                </article>
+            </section>
         
-        <!-- Code being used -->
-        <h2>Code Being Used</h2>
-        <h3>CSS</h3>
-        <pre id="css-code" class="brush:css">
+            <section>
+                <h3>Code Being Used</h3>
+
+                <section>
+                    <h4>CSS</h4>
+
+                    <pre id="css-code" class="brush:css">
 #textsizer-classnames
 {
    margin-bottom: 6px;
@@ -138,22 +146,22 @@ ul.textresizer
 
    ul.textresizer .small-text
    {
-      font-size: 11px;
+      font-size: 12px;
    }
    
    ul.textresizer .medium-text
    {
-      font-size: 13px;
+      font-size: 14px;
    }
    
    ul.textresizer .large-text
    {
-      font-size: 15px;
+      font-size: 16px;
    }
    
    ul.textresizer .larger-text
    {
-      font-size: 17px;
+      font-size: 18px;
    }
 
    ul.textresizer a.textresizer-active
@@ -169,33 +177,36 @@ ul.textresizer
 }
    #maincontent.small-text
    {
-      font-size: 11px;
+      font-size: 12px;
    }
    
    #maincontent.medium-text
    {
-      font-size: 13px;
+      font-size: 14px;
    }
    
    #maincontent.large-text
    {
-      font-size: 15px;
+      font-size: 16px;
    }
    
    #maincontent.larger-text
    {
-      font-size: 17px;
+      font-size: 18px;
    }
-        </pre>
-        
-        <h3>JavaScript/jQuery Code</h3>
-        <pre id="js-code" class="brush:html">
+                    </pre>
+                </section>
+
+                <section>
+                    <h4>JavaScript/jQuery Code</h4>
+
+                    <pre id="js-code" class="brush:html">
 &lt;script src=&quot;jquery.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;jquery.cookie.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;jquery.textresizer.js&quot;&gt;&lt;/script&gt;    
 &lt;script&gt;
-   $(document).ready( function() {
-      $( &quot;#textsizer-classnames a&quot; ).textresizer({
+   $(document).ready(function () {
+      $(&quot;#textsizer-classnames a&quot;).textresizer({
          target: &quot;#maincontent&quot;,
          type: &quot;cssClass&quot;,
          sizes: [ 
@@ -208,10 +219,13 @@ ul.textresizer
       });
    });
 &lt;/script&gt;
-        </pre>
-        
-        <h3>HTML</h3>
-        <pre id="html-code" class="brush:html">
+                    </pre>
+                </section>
+
+                <section>
+                    <h4>HTML</h4>
+
+                    <pre id="html-code" class="brush:html">
 &lt;div id=&quot;textsizer-classnames&quot;&gt;
    &lt;p&gt;Font Size:&lt;/p&gt;
    &lt;ul class=&quot;textresizer&quot;&gt;
@@ -222,7 +236,7 @@ ul.textresizer
    &lt;/ul&gt;
 &lt;/div&gt;
 
-&lt;div id=&quot;maincontent&quot;&gt;
+&lt;article id=&quot;maincontent&quot;&gt;
    &lt;h1&gt;Lorem Ipsum Dolor Sit Amet&lt;/h1&gt;
    &lt;p&gt;
       &lt;a href=&quot;http://www.lipsum.com/&quot;&gt;Lorem ipsum dolor sit amet&lt;/a&gt;, 
@@ -250,9 +264,12 @@ ul.textresizer
       erat. Morbi nec tellus a sapien mollis cursus ut eu ipsum. 
       Quisque eu vehicula magna.
    &lt;/p&gt;   
-&lt;/div&gt;
-        </pre>
-
+&lt;/article&gt;
+                    </pre>
+                </section>
+            </section>            
+        
+        </div>
     </div>
 
 </body>
