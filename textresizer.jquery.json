@@ -2,7 +2,7 @@
   "name": "textresizer",
   "title": "jQuery Text Resizer",
   "description": "The jQuery Text Resizer Plugin allows you to create controls for changing the font size of one or more elements on a page. It gives your users a fine degree of control over font sizes. It is flexible in that it lets you specify exactly how to resize text, how it should be styled (via CSS or CSS3), where in your page it should be resized, and how the font size controls are to be structured. The plugin works in tandem with the jQuery Cookie plugin so that it's able to remember the user's settings on their next visit (if they have cookies enabled, of course).",
-  "keywords": ["text", "font", "resize", "resizer", "size", "sizer"],
+  "keywords": ["text", "font", "resize", "resizer", "size", "sizer", "typography", "css", "css3", "effect", "ui"],
   "version": "1.1.0-alpha",
   "author": {
     "name": "Mario J Vargas",
