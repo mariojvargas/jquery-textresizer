@@ -1,9 +1,4 @@
-﻿.container_12
-{
-    margin-top: 10px;
-}
-        
-#html-code, #js-code, #css-code
+﻿#html-code, #js-code, #css-code
 {
     width: 100%;
     overflow: auto;
