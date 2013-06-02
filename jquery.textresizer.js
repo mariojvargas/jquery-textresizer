@@ -1,18 +1,18 @@
 ﻿/*
-    jQuery Text Resizer Plugin v1.1.0
+jQuery Text Resizer Plugin v1.1.0
     
-    Copyright (c) 2009-2013 Mario J Vargas
-    See the file MIT-LICENSE.txt for copying permission.
+Copyright (c) 2009-2013 Mario J Vargas
+See the file MIT-LICENSE.txt for copying permission.
     
-    Website: http://angstrey.com/
-    Documentation: http://angstrey.com/index.php/projects/jquery-text-resizer-plugin/
+Website: http://angstrey.com/
+Documentation: http://angstrey.com/index.php/projects/jquery-text-resizer-plugin/
 */
 ;(function ($) {
     "use strict";
 
-    var DEBUG_MODE = true;
+    var TextResizerPlugin, debug;
 
-    function debug(obj) {
+    debug = function (obj) {
         if (window.console && "function" === (typeof window.console.log)) {
             var key;
 
@@ -28,9 +28,22 @@
                 console.log("}");
             }
         }
-    }
+    };
 
-    function buildDefaultFontSizes(numElms) {
+    TextResizerPlugin = function ($elements, options) {
+        this.$elements = $elements;
+        this.settings = options || TextResizerPlugin.defaults;
+    };
+
+    TextResizerPlugin.defaults = {
+        debugMode: false,                               // Disable debug mode.
+        type: "fontSize",                               // Available options: fontSize, css, cssClass.
+        target: "body",                                 // The HTML element to which the new font size will be applied.
+        selectedIndex: -1,                              // No font size option selected by default.
+        suppressClickThrough: true                      // Disables click-through of font size controls.
+    };
+
+    TextResizerPlugin.prototype.buildDefaultFontSizes = function (numElms) {
         if (0 === numElms) {
             return;
         }
@@ -40,11 +53,11 @@
             i,
             value;
 
-        if (DEBUG_MODE) {
+        if (this.settings.debugMode) {
             debug("In buildDefaultFontSizes: numElms = " + numElms);
         }
 
-        if (DEBUG_MODE) {
+        if (this.settings.debugMode) {
             for (i = 0; i < numElms; i += 1) {
                 // Append elements in increments of 2 units
                 value = (size0 + (i * 2)) / 10;
@@ -61,14 +74,14 @@
         }
 
         return mySizes;
-    }
+    };
 
-    function serializeHash(dictionary) {
+    TextResizerPlugin.prototype.serializeHash = function (dictionary) {
         // jQuery's param() function does not replace white space correctly
         return $.param(dictionary).replace(/\+/g, "%20");
-    }
+    };
 
-    function deserializeHash(serializedValue) {
+    TextResizerPlugin.prototype.deserializeHash = function (serializedValue) {
         var i,
             valueCount,
             keyValuePair,
@@ -84,25 +97,25 @@
 
         // Now that the object is finished, return it
         return dictionary;
-    }
+    };
 
-    function buildCookieID(selector, target, prop) {
+    TextResizerPlugin.prototype.buildCookieID = function (selector, target, prop) {
         return "JQUERY.TEXTRESIZER[" + selector + "," + target + "]." + prop;
-    }
+    };
 
-    function getCookie(selector, target, prop) {
-        var id = buildCookieID(selector, target, prop),
+    TextResizerPlugin.prototype.getCookie = function (selector, target, prop) {
+        var id = this.buildCookieID(selector, target, prop),
             cookieValue = $.cookie(id);
 
         if ($.cookie(id + ".valueType") === "dict" && cookieValue) {
-            return deserializeHash(cookieValue);
+            return this.deserializeHash(cookieValue);
         }
 
         return cookieValue;
-    }
+    };
 
-    function setCookie(selector, target, prop, value) {
-        var id = buildCookieID(selector, target, prop),
+    TextResizerPlugin.prototype.setCookie = function (selector, target, prop, value) {
+        var id = this.buildCookieID(selector, target, prop),
             // Cookie expires in 1 year (365 days/year)
             cookieOpts = { expires: 365, path: "/" },
             serializedVals;
@@ -113,27 +126,27 @@
             // to a dictionary object
             $.cookie(id + ".valueType", "dict", cookieOpts);
 
-            serializedVals = serializeHash(value);
+            serializedVals = this.serializeHash(value);
 
             $.cookie(id, serializedVals, cookieOpts);
 
-            if (DEBUG_MODE) {
+            if (this.settings.debugMode) {
                 debug("In setCookie: Cookie: " + id + ": " + serializedVals);
             }
         } else {
             $.cookie(id, value, cookieOpts);
 
-            if (DEBUG_MODE) {
+            if (this.settings.debugMode) {
                 debug("In setCookie: Cookie (not hash): " + id + ": " + value);
             }
         }
-    }
+    };
 
-    function applyInlineCssProperties(targetElement, cssStyles) {
-        targetElement.css(cssStyles);
-    }
+    TextResizerPlugin.prototype.applyInlineCssProperties = function ($targetElement, cssStyles) {
+        $targetElement.css(cssStyles);
+    };
 
-    function applyCssClass($targetElement, newSize, cssClasses) {
+    TextResizerPlugin.prototype.applyCssClass = function ($targetElement, newSize, cssClasses) {
         // Remove previously assigned CSS class from
         // target element. Iterating through matched
         // elements ensures the class is removed
@@ -149,102 +162,121 @@
 
         // Now apply the new CSS class
         $targetElement.addClass(newSize);
-    }
+    };
 
-    function applySpecificFontSize(targetElement, newSize) {
-        targetElement.css("font-size", newSize);
-    }
+    TextResizerPlugin.prototype.applySpecificFontSize = function ($targetElement, newSize) {
+        $targetElement.css("font-size", newSize);
+    };
 
-    function applyFontSize(newSize, settings) {
-        if (DEBUG_MODE) {
+    TextResizerPlugin.prototype.applyFontSize = function (newSize, settings) {
+        if (this.settings.debugMode) {
             debug(["target: " + settings.target, "newSize: " + newSize, "type: " + settings.type].join(", "));
         }
 
         var targetElm = $(settings.target);
         switch (settings.type) {
             case "css":
-                applyInlineCssProperties(targetElm, newSize);
+                this.applyInlineCssProperties(targetElm, newSize);
                 break;
 
             case "cssClass":
-                applyCssClass(targetElm, newSize, settings.sizes);
+                this.applyCssClass(targetElm, newSize, settings.sizes);
                 break;
 
             default:
-                applySpecificFontSize(targetElm, newSize);
+                this.applySpecificFontSize(targetElm, newSize);
                 break;
         }
-    }
+    };
 
-    function loadPreviousState(settings) {
+    TextResizerPlugin.prototype.loadPreviousState = function (settings) {
         // Determine if jquery.cookie is installed
         if ($.cookie) {
-            if (DEBUG_MODE) {
+            if (this.settings.debugMode) {
                 debug("In loadPreviousState(): jquery.cookie: INSTALLED");
             }
 
-            var rawSelectedIndex = getCookie(settings.selector, settings.target, "selectedIndex"),
+            var rawSelectedIndex = this.getCookie(settings.selector, settings.target, "selectedIndex"),
                 selectedIndex = parseInt(rawSelectedIndex, 10),
-                prevSize = getCookie(settings.selector, settings.target, "size");
+                prevSize = this.getCookie(settings.selector, settings.target, "size");
 
             if (!isNaN(selectedIndex)) {
                 settings.selectedIndex = selectedIndex;
             }
 
-            if (DEBUG_MODE) {
+            if (this.settings.debugMode) {
                 debug("In loadPreviousState: selectedIndex: " + selectedIndex + "; type: " + (typeof selectedIndex));
 
                 debug("In loadPreviousState: prevSize: " + prevSize + "; type: " + (typeof prevSize));
             }
 
             if (prevSize) {
-                applyFontSize(prevSize, settings);
+                this.applyFontSize(prevSize, settings);
             }
         } else {
-            if (DEBUG_MODE) {
+            if (this.settings.debugMode) {
                 debug("In loadPreviousState(): jquery.cookie: NOT INSTALLED");
             }
         }
-    }
+    };
 
-    function markActive(sizeButton, settings) {
+    TextResizerPlugin.prototype.markActive = function (sizeButton, settings) {
         // Deactivate previous button
         $(settings.selector).removeClass("textresizer-active");
 
         // Mark this button as active
         $(sizeButton).addClass("textresizer-active");
-    }
+    };
 
-    function saveState(newSize, settings) {
+    TextResizerPlugin.prototype.saveState = function (newSize, settings) {
         // Determine if jquery.cookie is installed
         if ($.cookie) {
-            if (DEBUG_MODE) {
+            if (this.settings.debugMode) {
                 debug("In saveState(): jquery.cookie: INSTALLED");
             }
 
-            setCookie(settings.selector, settings.target, "size", newSize);
-            setCookie(settings.selector, settings.target, "selectedIndex", settings.selectedIndex);
+            this.setCookie(settings.selector, settings.target, "size", newSize);
+            this.setCookie(settings.selector, settings.target, "selectedIndex", settings.selectedIndex);
         } else {
-            if (DEBUG_MODE) {
+            if (this.settings.debugMode) {
                 debug("In saveState(): jquery.cookie: NOT INSTALLED");
             }
         }
-    }
+    };
 
-    $.fn.textresizer = function (options) {
-        var numberOfElements = this.size(),
-            settings;
+    TextResizerPlugin.prototype.attachResizerToElement = function (element, index, settings) {
+        var thisPlugin = this,
+            $resizeButton = $(element),                // Current resize button
+            currSizeValue = settings.sizes[index];      // Size corresponding to this resize button
 
-        this.defaults = {
-            type: "fontSize",                               // Available options: fontSize, css, cssClass
-            target: "body",                                 // The HTML element to which the new font size will be applied
-            selector: this.selector,
-            sizes: buildDefaultFontSizes(numberOfElements), // Default font sizes based on number of resize buttons.
-            selectedIndex: -1,
-            suppressClickThrough: true                      // Disables click-through of font size controls
-        };
+        // Mark this button as active if necessary
+        if (index === settings.selectedIndex) {
+            $resizeButton.addClass("textresizer-active");
+        }
 
-        if (DEBUG_MODE) {
+        // Apply the font size to target element when its 
+        // corresponding resize button is clicked
+        $resizeButton.on("click", { index: index }, function (e) {
+            if (settings.suppressClickThrough) {
+                e.preventDefault();
+            }
+
+            settings.selectedIndex = e.data.index;
+
+            thisPlugin.applyFontSize(currSizeValue, settings);
+            thisPlugin.saveState(currSizeValue, settings);
+
+            thisPlugin.markActive(this, settings);
+        });
+    };
+
+    TextResizerPlugin.prototype.init = function () {
+        var thisPlugin = this,
+            numberOfElements = thisPlugin.$elements.size(),
+            settings,
+            debugMode = TextResizerPlugin.defaults.debugMode;
+
+        if (debugMode) {
             debug("jquery.textresizer => selection count: " + numberOfElements);
         }
 
@@ -254,16 +286,25 @@
         }
 
         // Set up main options before element iteration
-        settings = $.extend({}, this.defaults, options);
+        thisPlugin.settings = $.extend({
+            selector: thisPlugin.$elements.selector,
+            sizes: this.buildDefaultFontSizes(numberOfElements)     // Default font sizes based on number of resize buttons.
+        },
+            $.fn.textresizer.defaults,
+            thisPlugin.settings
+        );
+        settings = thisPlugin.settings;
 
-        if (DEBUG_MODE) {
+        debugMode = settings.debugMode;
+
+        if (debugMode) {
             debug(settings);
         }
 
         // Ensure that the number of defined sizes is suitable
         // for number of resize buttons.
         if (numberOfElements > settings.sizes.length) {
-            if (DEBUG_MODE) {
+            if (debugMode) {
                 debug("ERROR: Number of defined sizes incompatible with number of buttons => elements: " + numberOfElements
                     + "; defined sizes: " + settings.sizes.length
                     + "; target: " + settings.target);
@@ -272,32 +313,19 @@
             return;    // Stop execution of the plugin
         }
 
-        loadPreviousState(settings);
+        thisPlugin.loadPreviousState(settings);
+
+        return thisPlugin;
+    };
+
+    $.fn.textresizer = function (options) {
+        var plugin = new TextResizerPlugin(this, options).init();
 
         // Iterate and bind click event function to each element
         return this.each(function (i) {
-            var $this = $(this),                        // Current resize button
-                currSizeValue = settings.sizes[i];      // Size corresponding to this resize button
-
-            // Mark this button as active if necessary
-            if (i === settings.selectedIndex) {
-                $this.addClass("textresizer-active");
-            }
-
-            // Apply the font size to target element when its 
-            // corresponding resize button is clicked
-            $this.bind("click", { index: i }, function (e) {
-                if (settings.suppressClickThrough) {
-                    e.preventDefault();
-                }
-
-                settings.selectedIndex = e.data.index;
-
-                applyFontSize(currSizeValue, settings);
-                saveState(currSizeValue, settings);
-
-                markActive(this, settings);
-            });
+            plugin.attachResizerToElement(this, i, plugin.settings);
         });
     };
+
+    $.fn.textresizer.defaults = TextResizerPlugin.defaults;
 })(window.jQuery);
