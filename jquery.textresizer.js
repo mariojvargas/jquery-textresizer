@@ -1,7 +1,7 @@
 ﻿/*
-    jQuery Text Resizer Plugin v1.1.0-alpha
+    jQuery Text Resizer Plugin v1.1.0
     
-    Copyright (c) 2009, 2013 Mario J Vargas
+    Copyright (c) 2009-2013 Mario J Vargas
     See the file MIT-LICENSE.txt for copying permission.
     
     Website: http://angstrey.com/
