@@ -21,7 +21,7 @@ jQuery Text Resizer is compatible with the following:
 This plugin distributes the above dependencies along with the demos included with the plugin. You do not have to use the included dependencies. In fact, it is strongly advised that you use the version of jQuery and jQuery Cookie available from their websites.
 
 ##Licensing Information
-jQuery Text Resizer is published under the MIT License.
+jQuery Text Resizer is published under the **MIT License**.
 
 Copyright (c) 2009 Mario J Vargas
 
