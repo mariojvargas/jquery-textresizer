@@ -13,7 +13,7 @@ Documentation: http://angstrey.com/index.php/projects/jquery-text-resizer-plugin
     var TextResizerPlugin, debug, stringify;
 
     stringify = function (value) {
-        if (window.JSON && window.JSON.stringify) {
+        if ("object" === (typeof window.JSON) && "function" === (typeof window.JSON.stringify)) {
             return JSON.stringify(value);
         }
 
