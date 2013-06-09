@@ -23,7 +23,7 @@ This plugin distributes the above dependencies along with the demos included wit
 ##Licensing Information
 jQuery Text Resizer is published under the **MIT License**.
 
-Copyright (c) 2009 Mario J Vargas
+Copyright (c) 2009-2013 Mario J Vargas
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
