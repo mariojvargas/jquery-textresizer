@@ -4,7 +4,7 @@ _____________________________________
 
 ##jQuery Text Resizer Plugin
 * [Official Documentation](http://angstrey.com/index.php/projects/jquery-text-resizer-plugin/)
-* [Live Demos](http://demos.angstrey.com/jquery/plugins/jquery.textresizer/)
+* [Live Demos](http://demos.angstrey.com/jquery/plugins/jquery.textresizer/demos/)
 
 The jQuery Text Resizer Plugin allows you to create controls for changing the font size of one or more elements on a page. It gives your users a fine degree of control over font sizes. It is flexible in that it lets you specify exactly how to resize text, how it should be styled (via CSS or CSS3), where in your page it should be resized, and how the font size controls are to be structured.
 
