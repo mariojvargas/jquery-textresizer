@@ -18,7 +18,7 @@ The plugin works in tandem with the [jQuery Cookie plugin](http://plugins.jquery
   * Improved codebase.
   * Enhanced navigation between demos.
   * New features and enhancements: debug mode, suppressClickThrough
-* 1.0.0 (September 9, 2009): Initial release.
+* 1.0.0 (September 3, 2009): Initial release.
 
 ##Dependecies
 jQuery Text Resizer is compatible with the following:
