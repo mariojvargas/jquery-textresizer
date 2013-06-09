@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>jQuery Text Resizer Demos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <link href="css/960.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container_12 clearfix">
+        <div class="grid_12">
+            <!--[if lt IE 7]>
+                <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+            <![endif]-->
+
+            <header id="header" class="clearfix">
+                <h1 class="header-title">jQuery Text Resizer</h1>
+                <nav id="main-nav">
+                    <ul class="nav clearfix">
+                        <li class="nav-item active"><a class="nav-item-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-item-link" href="simple-demo.htm">Simple Demo</a></li>
+                        <li class="nav-item"><a class="nav-item-link" href="font-sizes.htm">Font Sizes</a></li>
+                        <li class="nav-item"><a class="nav-item-link" href="css-class-names.htm">CSS Classes</a></li>
+                        <li class="nav-item"><a class="nav-item-link" href="embedded-css.htm">Embedded CSS</a></li>
+                        <li class="nav-item"><a class="nav-item-link" href="multiple.htm">Multiple Instances</a></li>
+                        <li class="nav-item"><a class="nav-item-link" href="http://angstrey.com/index.php/projects/jquery-text-resizer-plugin/">Docs</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <article>
+                <section>
+                    <h2>About jQuery Text Resizer Plugin</h2>
+                    <p>
+                        The jQuery Text Resizer Plugin allows you to create controls for 
+                        changing the font size of one or more elements on a page. It gives 
+                        your users a fine degree of control over font sizes. It is flexible 
+                        in that it lets you specify exactly how to resize text, how it 
+                        should be styled (via CSS or CSS3), where in your page it should be 
+                        resized, and how the font size controls are to be structured.
+                    </p>
+                    <p>
+                        Though modern Web browsers do offer text-resizing functionality, 
+                        many Web users aren't aware that these features exist and might 
+                        appreciate a convenient method to control the font size of the 
+                        content they're reading. Since not all users browse your Web 
+                        pages with a desktop or laptop, modern Web development demands 
+                        designing with mobile devices in mind. Screen sizes vary per 
+                        device, and so do font sizes. Typography is more important than 
+                        ever. jQuery Text Resizer can aid you in creating the controls 
+                        for sizing content on demand.
+                    </p>
+                    <p>
+                        The plugin works in tandem with the 
+                        <a href="http://plugins.jquery.com/cookie/">jQuery Cookie plugin</a> 
+                        so that it's able to remember the user's settings on their next 
+                        visit (if they have cookies enabled, of course).
+                    </p>
+                </section>
+
+                <section>
+                    <h2>History of the Plugin</h2>
+                
+                    <p>
+                        jQuery Text Resizer was my first plugin in September of 2009. Before 
+                        that I had never found the need to develop my own because a lot of 
+                        talented developers already created many wonderful plugins for the 
+                        awesome <a href="http://jquery.com/">jQuery</a> JavaScript library.
+                    </p>
+
+                    <p>
+                        In July of 2009 at my former employer, I was presented with a request 
+                        to put in place a text resizer for a design one of my coworkers was 
+                        working on. I was assisting her with converting her design concept to 
+                        a Web standards design based on HTML and CSS. I thought that placing 
+                        a text resizer control would be a simple task. In practice, it is. 
+                        I had done it for at least two websites. Those two websites use a 
+                        DHTML Script developed by Taewook Kang, which can be viewed and 
+                        downloaded at 
+                        <a href="http://bit.ly/13uJXKT">"Document Text Sizer" - Dynamic Drive</a>.
+                    </p>
+
+                    <p>
+                        I like the script and I believe it is a good one. One feature it lacked 
+                        was the ability to remember the user's choice. Therefore, when you 
+                        resized the text on the site's homepage and browsed to an inside page, 
+                        the previously selected font size would be lost and the user would be 
+                        forced to resize the text again. Not user-friendly. I modified that 
+                        script when I worked on <a href="http://www.thecourier.com/">TheCourier.com</a> 
+                        so that it would remember the user's choice by saving it to a cookie. 
+                        In fact that was a long awaited feature by some users. The modified 
+                        version works great, but I never made it available for download.
+                    </p>
+
+                    <p>
+                        Because I had already invested my time in modifying the TextSizer script 
+                        by Mr. Kang, there was no point for me to reinvent the wheel. However, 
+                        the site my coworker and I were working on was using the 
+                        <a href="http://users.tpg.com.au/j_birch/plugins/superfish/">SuperFish jQuery plugin</a> 
+                        for the main and sidebar navigation. I decided to look for a jQuery 
+                        solution.
+                    </p>
+
+                    <p>
+                        I was disappointed to find out that there weren't many options. In fact, 
+                        I only found one existing plugin at the jQuery plugins directory. I also 
+                        did a short search on Google. I wasn't too fond of the existing solutions. 
+                        I also considered using a style switcher, but that seemed like an overly 
+                        complex solution. Why in the world should I create 3 or 4 different CSS 
+                        files for just resizing text?
+                    </p>
+
+                    <p>
+                        What I like about Taewook Kang's Text Sizer is that it lets you create a 
+                        list of available font sizes and then you can either traverse the array 
+                        of font sizes by using an increase or decrease font size button, or by 
+                        simply invoking a function, passing it the target HTML to resize and the 
+                        index of the font size stored in the array. Those existing jQuery plugins 
+                        that I looked at did not do that--or perhaps I didn't look carefully. I 
+                        chose to skip Taewook Kang's script for the sake of writing unobtrusive 
+                        JavaScript.
+                    </p>
+
+                    <p>
+                        My plugin is inspired by Taewook Kang's TextSizer script but it is a 
+                        completely new and fresh implementation.
+                    </p>
+                </section>
+            </article>
+        </div> 
+    </div>
+</body>
+</html>

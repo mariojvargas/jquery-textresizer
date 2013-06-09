@@ -1,0 +1,84 @@
+﻿.textresizer-label 
+{
+    display: inline-block;
+    font-weight: bold;
+}
+
+ul.textresizer
+{
+	list-style: none;
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+}
+	ul.textresizer li
+	{
+		display: inherit;
+		margin: 0px;
+		padding: 0px;
+	}
+
+        ul.textresizer li a
+        {
+            border: solid 1px #ffffff;
+            padding: 2px 3px;
+            font-weight: normal;
+            text-decoration: none;
+        }
+    
+        ul.textresizer li a:hover
+        {
+            background: #e5e5e5;
+            border: solid 1px #cccccc;
+        
+        }
+
+#content2
+{
+	font-size: 13px;
+}
+
+.textresizer a.textresizer-active
+{
+	border: solid 1px #2B562B;
+	background: #ffffcc;
+	color: #000000;				
+}
+
+.s0
+{
+    font-size: 12px;
+}
+.s1
+{
+    font-size: 14px;
+}
+.s2
+{
+    font-size: 16px;
+}
+.s3
+{
+    font-size: 18px;
+}
+.s4
+{
+    font-size: 20px;
+}
+.s5
+{
+    font-size: 22px;
+}	
+.s6
+{
+    font-size: 24px;
+}	
+.s7
+{
+    font-size: 26px;
+}	
+.s8
+{
+    font-size: 28px;
+}
+

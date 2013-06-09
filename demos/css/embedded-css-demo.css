@@ -1,0 +1,76 @@
+﻿#html-code, #js-code, #css-code
+{
+    width: 100%;
+    overflow: auto;
+    margin-bottom: 20px;
+}
+        
+#textsizer-embed
+{
+    margin-bottom: 6px;
+}
+    #textsizer-embed p
+    {
+        display: inline;
+    }
+ul.textresizer
+{
+    list-style: none;
+    display: inline;
+    margin: 0px;
+    padding: 0px;
+}
+    ul.textresizer li
+    {
+        display: inline;
+        margin: 0px;
+        margin-right: 5px;
+        padding: 0px;
+    }
+
+    ul.textresizer a
+    {
+        border: solid 1px #999;
+        padding: 2px 3px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+            
+    ul.textresizer a:hover
+    {
+        background: #e5e5e5;
+        border: solid 1px #cccccc;
+                
+    }
+
+    ul.textresizer .small-text
+    {
+        font-size: 11px;
+    }
+            
+    ul.textresizer .medium-text
+    {
+        font-size: 13px;
+    }
+            
+    ul.textresizer .large-text
+    {
+        font-size: 15px;
+    }
+            
+    ul.textresizer .larger-text
+    {
+        font-size: 17px;
+    }
+
+    ul.textresizer a.textresizer-active
+    {
+        border: solid 1px #2B562B;
+        background: #FFCA6F;
+        color: #000000;                
+    }
+
+#maincontent 
+{
+    background: #ffffcc;
+}

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Font Sizes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link href="css/960.css" rel="stylesheet" />
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+
+    <!-- BEGIN: Syntax Highlighter -->
+    <link href="js/vendor/syntaxhighlighter/styles/shCore.css" rel="stylesheet" />
+    <link href="js/vendor/syntaxhighlighter/styles/shThemeRDark.css" rel="stylesheet" />
+    <!-- END: Syntax Highlighter -->
+
+    <!-- BEGIN: Code Relevant to Demo -->
+    <link href="css/font-sizes-demo.css" rel="stylesheet" />
+    <!-- END: Code Relevant to Demo -->
+</head>
+<body>
+
+    <div class="container_12 clearfix">
+        <div class="grid_12">
+            <header id="header" class="clearfix">
+                <h1 class="header-title">jQuery Text Resizer</h1>
+                <nav id="main-nav">
+                    <ul class="nav clearfix">
+                        <li class="nav-item"><a class="nav-item-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-item-link" href="simple-demo.htm">Simple Demo</a></li>
+                        <li class="nav-item active"><a class="nav-item-link" href="font-sizes.htm">Font Sizes</a></li>
+                        <li class="nav-item"><a class="nav-item-link" href="css-class-names.htm">CSS Classes</a></li>
+                        <li class="nav-item"><a class="nav-item-link" href="embedded-css.htm">Embedded CSS</a></li>
+                        <li class="nav-item"><a class="nav-item-link" href="multiple.htm">Multiple Instances</a></li>
+                        <li class="nav-item"><a class="nav-item-link" href="http://angstrey.com/index.php/projects/jquery-text-resizer-plugin/">Docs</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <h2>Demo Using the "fontSize" Type</h2>
+
+            <section>
+                <h3>Live Example</h3>
+                <div id="textsizer">
+                   <p>Font Size:</p>
+                   <ul class="textresizer">
+                       <li><a href="#nogo" class="small-text">Small</a></li>
+                       <li><a href="#nogo" class="medium-text">Medium</a></li>
+                       <li><a href="#nogo" class="large-text">Large</a></li>
+                       <li><a href="#nogo" class="larger-text">X-Large</a></li>
+                   </ul>
+                </div>
+
+                <article id="maincontent">
+                    <h1>Lorem Ipsum Dolor Sit Amet</h1>
+                    <p>
+                        <a href="http://www.lipsum.com/">Lorem ipsum dolor sit amet</a>, 
+                        <strong>consectetur adipiscing elit</strong>. 
+                        <em>Sed laoreet massa est</em>, eu vulputate urna. Class aptent 
+                        taciti sociosqu ad litora torquent per conubia nostra, per 
+                        inceptos himenaeos. <a href="http://nosite.com/">Vestibulum magna mauris</a>, 
+                        molestie vitae sollicitudin id, auctor at orci. Nulla sodales lectus ac est 
+                        fringilla sed vulputate risus lobortis. Quisque interdum 
+                        dignissim molestie. Donec non sapien quis diam varius 
+                        vestibulum. Vestibulum ante ipsum primis in faucibus orci 
+                        luctus et ultrices posuere cubilia Curae; Ut pellentesque 
+                        viverra varius. Aliquam vitae sem ut nibh ultricies consequat 
+                        vel non felis. Etiam felis massa, pretium convallis posuere at, 
+                        accumsan sit amet massa.
+                    </p>
+                    <p>
+                        Suspendisse id purus metus, ac 
+                        consequat nibh. Ut volutpat ultricies lorem quis interdum. 
+                        Vestibulum ante ipsum primis in faucibus orci luctus et 
+                        ultrices posuere cubilia Curae; Vestibulum ante ipsum primis in 
+                        faucibus orci luctus et ultrices posuere cubilia Curae; 
+                        Maecenas accumsan malesuada erat, in auctor erat sagittis ac. 
+                        Maecenas augue turpis, viverra at congue ut, tristique vitae 
+                        erat. Morbi nec tellus a sapien mollis cursus ut eu ipsum. 
+                        Quisque eu vehicula magna.
+                    </p>    
+                </article>
+            </section>
+        
+            <section>
+                <h3>Code Being Used</h3>
+
+                <section>
+                    <h4>CSS</h4>
+                    <p>
+                        Note that in this example I am defining the look and feel 
+                        of the resize buttons via CSS, even though in the JavaScript 
+                        I am using the <strong>"fontSize"</strong> <strong>type</strong>
+                        and then redefining the size of the targetted content via the 
+                        <strong>sizes</strong> property.
+                    </p>
+
+                    <pre id="css-code" class="brush:css">
+#textsizer
+{
+    margin-bottom: 6px;
+}
+    #textsizer p
+    {
+        display: inline;
+    }
+ul.textresizer
+{
+    list-style: none;
+    display: inline;
+    margin: 0px;
+    padding: 0px;
+}
+    ul.textresizer li
+    {
+        display: inline;
+        margin: 0px;
+        margin-right: 5px;
+        padding: 0px;
+    }
+
+    ul.textresizer a
+    {
+        border: solid 1px #999;
+        padding: 2px 3px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    
+    ul.textresizer a:hover
+    {
+        background: #e5e5e5;
+        border: solid 1px #cccccc;
+        
+    }
+
+    ul.textresizer .small-text
+    {
+        font-size: 12px;
+    }
+    
+    ul.textresizer .medium-text
+    {
+        font-size: 14px;
+    }
+    
+    ul.textresizer .large-text
+    {
+        font-size: 16px;
+    }
+    
+    ul.textresizer .larger-text
+    {
+        font-size: 18px;
+    }
+
+    ul.textresizer a.textresizer-active
+    {
+        border: solid 1px #2B562B;
+        background: #FFCA6F;
+        color: #000000;                
+    }
+
+#maincontent 
+{
+    background: #ffffcc;
+}
+                    </pre>
+                </section>
+        
+                <section>
+                    <h4>JavaScript/jQuery Code</h4>
+
+                    <pre id="js-code" class="brush:html; toolbar: true;">
+&lt;script src=&quot;jquery.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;jquery.cookie.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;jquery.textresizer.js&quot;&gt;&lt;/script&gt;    
+&lt;script&gt;
+   $(document).ready(function () {
+      $(&quot;#textsizer a&quot;).textresizer({
+         target: &quot;#maincontent&quot;,
+         type: &quot;fontSize&quot;,
+         sizes: [ &quot;12px&quot;, &quot;14px&quot;, &quot;16px&quot;, &quot;18px&quot; ],
+         selectedIndex: 1
+      });
+   });
+&lt;/script&gt;
+                    </pre>
+                </section>
+
+                <section>
+                    <h4>HTML</h4>
+
+                    <pre id="html-code" class="brush:html">
+&lt;div id=&quot;textsizer&quot;&gt;
+   &lt;p&gt;Font Size:&lt;/p&gt;
+   &lt;ul class=&quot;textresizer&quot;&gt;
+      &lt;li&gt;&lt;a href=&quot;#nogo&quot; class=&quot;small-text&quot; title=&quot;Small&quot;&gt;A&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#nogo&quot; class=&quot;medium-text&quot; title=&quot;Medium&quot;&gt;A&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#nogo&quot; class=&quot;large-text&quot; title=&quot;Large&quot;&gt;A&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#nogo&quot; class=&quot;larger-text&quot; title=&quot;Larger&quot;&gt;A&lt;/a&gt;&lt;/li&gt;
+   &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;article id=&quot;maincontent&quot;&gt;
+   &lt;h1&gt;Lorem Ipsum Dolor Sit Amet&lt;/h1&gt;
+   &lt;p&gt;
+      &lt;a href=&quot;http://www.lipsum.com/&quot;&gt;Lorem ipsum dolor sit amet&lt;/a&gt;, 
+      &lt;strong&gt;consectetur adipiscing elit&lt;/strong&gt;. &lt;em&gt;Sed laoreet massa est&lt;/em&gt;, 
+      eu vulputate urna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per 
+      inceptos himenaeos. &lt;a href=&quot;http://nosite.com/&quot;&gt;Vestibulum magna mauris&lt;/a&gt;, 
+      molestie vitae sollicitudin id, auctor at orci. Nulla sodales lectus ac est 
+      fringilla sed vulputate risus lobortis. Quisque interdum 
+      dignissim molestie. Donec non sapien quis diam varius 
+      vestibulum. Vestibulum ante ipsum primis in faucibus orci 
+      luctus et ultrices posuere cubilia Curae; Ut pellentesque 
+      viverra varius. Aliquam vitae sem ut nibh ultricies consequat 
+      vel non felis. Etiam felis massa, pretium convallis posuere at, 
+      accumsan sit amet massa.
+   &lt;/p&gt;
+   &lt;p&gt;
+      Suspendisse id purus metus, ac 
+      consequat nibh. Ut volutpat ultricies lorem quis interdum. 
+      Vestibulum ante ipsum primis in faucibus orci luctus et 
+      ultrices posuere cubilia Curae; Vestibulum ante ipsum primis in 
+      faucibus orci luctus et ultrices posuere cubilia Curae; 
+      Maecenas accumsan malesuada erat, in auctor erat sagittis ac. 
+      Maecenas augue turpis, viverra at congue ut, tristique vitae 
+      erat. Morbi nec tellus a sapien mollis cursus ut eu ipsum. 
+      Quisque eu vehicula magna.
+   &lt;/p&gt;   
+&lt;/article&gt;
+                    </pre>
+
+                </section>
+
+            </section>
+        </div>
+
+
+    </div>
+
+    <!-- BEGIN: Syntax Highlighter -->
+    <script src="js/vendor/syntaxhighlighter/scripts/shCore.js"></script>
+    <script src="js/vendor/syntaxhighlighter/scripts/shBrushXml.js"></script>
+    <script src="js/vendor/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+    <script src="js/vendor/syntaxhighlighter/scripts/shBrushCss.js"></script>
+    <script>
+        SyntaxHighlighter.all();
+    </script> 
+    <!-- END: Syntax Highlighter -->
+
+    <!-- BEGIN: Code Relevant to Demo -->
+    <script src="js/vendor/jquery/jquery-1.9.1.min.js"></script>
+    <script src="js/vendor/jquery/jquery.cookie/jquery.cookie.js"></script>
+    <script src="../jquery.textresizer.js"></script>    
+    <script>
+        $(document).ready(function () {
+            $("#textsizer a").textresizer({
+                target: "#maincontent",
+                type: "fontSize",
+                sizes: ["12px", "14px", "16px", "18px"],
+                selectedIndex: 1
+            });
+        });
+    </script>
+    <!-- END: Code Relevant to Demo -->
+</body>
+</html>
