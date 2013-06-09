@@ -12,6 +12,14 @@ Though modern Web browsers do offer text-resizing functionality, many Web users 
 
 The plugin works in tandem with the [jQuery Cookie plugin](http://plugins.jquery.com/cookie/) so that it's able to remember the user’s settings on their next visit (if they have cookies enabled, of course).
 
+##History of Changes
+
+* 1.1.0 (June 9, 2013):
+  * Improved codebase.
+  * Enhanced navigation between demos.
+  * New features and enhancements: debug mode, suppressClickThrough
+* 1.0.0 (September 9, 2009): Initial release.
+
 ##Dependecies
 jQuery Text Resizer is compatible with the following:
 * [jQuery 1.3.2 or later](http://jquery.com/)
