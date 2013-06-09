@@ -1,16 +1,21 @@
-jQuery Text Resizer Plugin
-==========================
-For documentation, please visit the official [jQuery Text Resizer Plugin project page.] (http://angstrey.com/index.php/projects/jquery-text-resizer-plugin/)
+_____________________________________
+**UPDATE - June 8, 2013:** I am planning to move the documentation and demos to Github. For the time being, I'm leaving these on my website [angstrey.com](http://angstrey.com/).
+_____________________________________
 
-##Status of Project
-* **2013-05-11**: I last worked on this project in September of 2009. Therefore, as of today I'm working on adding additional enhancements to the plugin, including support for the latest versions of its dependencies.
+##jQuery Text Resizer Plugin
+* [Official Documentation](http://angstrey.com/index.php/projects/jquery-text-resizer-plugin/)
+* [Live Demos](http://demos.angstrey.com/jquery/plugins/jquery.textresizer/)
+
+The jQuery Text Resizer Plugin allows you to create controls for changing the font size of one or more elements on a page. It gives your users a fine degree of control over font sizes. It is flexible in that it lets you specify exactly how to resize text, how it should be styled (via CSS or CSS3), where in your page it should be resized, and how the font size controls are to be structured.
+
+Though modern Web browsers do offer text-resizing functionality, many Web users aren't aware that these features exist and might appreciate a convenient method to control the font size of the content they're reading. Since not all users browse your Web pages with a desktop or laptop, modern Web development demands designing with mobile devices in mind. Screen sizes vary per device, and so do font sizes. Typography is more important than ever. jQuery Text Resizer can aid you in creating the controls for sizing content on demand.
+
+The plugin works in tandem with the [jQuery Cookie plugin](http://plugins.jquery.com/cookie/) so that it's able to remember the user’s settings on their next visit (if they have cookies enabled, of course).
 
 ##Dependecies
-* [jQuery 1.3.2 or later] (http://jquery.com/)
-* [jQuery Cookie 1.0] (http://plugins.jquery.com/cookie/)
+jQuery Text Resizer is compatible with the following:
+* [jQuery 1.3.2 or later](http://jquery.com/)
+* [jQuery Cookie 1.0 or later](http://plugins.jquery.com/cookie/)
 
-##Important Note
-This plugin distributes the above dependencies due to the demos included with the plugin. You do not have to use the included dependencies. In fact, I strongly discourage you.
-
-##Disclaimer
-I've never tested **jQuery Text Resizer** with the latest versions of **jQuery** and the **jQuery Cookie** plugin (1.9/2.0 and 1.3.x, respectively, at time of writing). Use at your own risk.
+##Important Notice
+This plugin distributes the above dependencies along with the demos included with the plugin. You do not have to use the included dependencies. In fact, it is strongly advised that you use the version of jQuery and jQuery Cookie available from their websites.
